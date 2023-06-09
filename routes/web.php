@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\http\Controllers\UserAuthController;
+use App\Http\Controllers\FormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,22 @@ use App\http\Controllers\UserAuthController;
 // Route::get('/', function () {
 //     return view('admin/index');
 // });
+
+ Route::get('/', [FormController::class, 'index'])->name('index');
+ Route::post('/', [FormController::class, 'postStep1'])->name('postStep1');
+
+// Route::get('/step1', [FormController::class, 'step1'])->name('step1');
+// Route::post('/step1', [FormController::class, 'postStep1'])->name('postStep1');
+
+Route::get('/step2', [FormController::class, 'step2'])->name('step2');
+Route::post('/step2', [FormController::class, 'postStep2'])->name('postStep2');
+
+Route::get('/step3', [FormController::class, 'step3'])->name('step3');
+Route::post('/step3', [FormController::class, 'postStep3'])->name('postStep3');
+
+
+Route::get('/success', [FormController::class, 'success'])->name('success');
+
 
 Route::controller(UserAuthController::class)->group(function(){
 
