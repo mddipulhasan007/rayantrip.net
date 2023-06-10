@@ -21,19 +21,12 @@
                         value="CXB, Coxs Bazar"
                         name="to_city_short_apt_name" required />
             </li>
-            <li class="departure-fly">
+            <li class="departure-fly full-departure-fly">
                 <label for="from">Departure</label>
                 <input type="text" class="form-control"
                         id="from" name="dept_date_from"
                         value="11 Jun 2023, Saturday"
                         placeholder="11 Jun 2023, Saturday" required>
-            </li>
-            <li class="return-fly">
-                <!-- <label for="to">Return</label>
-                <input type="text" class="form-control" id="to"
-                        name="return_date_to"
-                        value="12 Jun 2023, Sunday"
-                        placeholder="12 Jun 2023, Sunday"> -->
             </li>
             <li class="travel-class-fly">
                 <label for="trav_count">Travellers &
@@ -43,11 +36,12 @@
                         <input type="text"
                             class="form-control trav_count"
                             id="trav_count" name="trav_count"
-                            value="1" required> Traveller
+                            value="1" required readonly> Traveller
                 </div>
-                <!-- <input type="text" class="form-control"
-                        id="trav_class" name="trav_class"
-                        value="First Class"> -->
+                
+                <input type="text" class="form-control"
+                        id="trav_class"
+                        value="First Class" readonly>
 
                 <div
                         class="travelllers-class-select-popup d-none">
@@ -56,7 +50,7 @@
                                     class="fa-solid fa-circle-xmark close-popup-btn"></i>
                         </div>
                         <div class="travelllers-class-select-1">
-                            Adult
+                            <span class="pcount">Adult</span>
                             <button type='button'
                                     class='btn btn-danger btn-sm '
                                     id='mbA'
@@ -75,7 +69,7 @@
                                     onmouseleave='clearAll()'>+</button>
                         </div>
                         <div class="travelllers-class-select-2">
-                            Children
+                        <span class="pcount">Children</span>
                             <button type='button'
                                     class='btn btn-danger btn-sm signBut'
                                     id='mbB'
@@ -95,7 +89,7 @@
                             </button>
                         </div>
                         <div class="travelllers-class-select-3">
-                            Infants
+                        <span class="pcount">Infants</span>
                             <button type='button'
                                     class='btn btn-danger btn-sm signBut'
                                     id='mbC'
@@ -113,7 +107,7 @@
                                     onmouseup='clearAll()'
                                     onmouseleave='clearAll()'>+</button>
                         </div>
-                        <button type="button" value="ADD"
+                        <button class="btn btn-primary apply-btn" type="button" value="ADD"
                             onclick="addition()">Apply</button>
                 </div>
             </li>
@@ -153,6 +147,8 @@
                 </div>
             </div>
     </div>
-    <button type="submit"
-            class="btn btn-primary">Search</button>
+    <div class="bottom-search-main">
+        <button type="submit"
+            class="btn btn-primary filter-main-search">Search</button>
+    </div>
 </form>

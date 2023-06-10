@@ -818,6 +818,10 @@ body {
             height: 450px;
             position: relative;
 
+            @media (max-width:575px) {
+                height: 530px;
+            }
+
             .filter-top-sec {
                 position: absolute;
                 z-index: 9;
@@ -834,6 +838,56 @@ body {
                     border-radius: 10px;
                     width: 80%;
                     margin: auto;
+
+                    @media (max-width:575px) {
+                        width: 98%;
+                    }
+
+                    ul {
+                        &.main-category-menu-types {
+                            li {
+                                &.cat-item {
+                                    a {
+                                        color: #1d2650;
+                                        font-size: 1rem;
+                                        line-height: 20px;
+                                        text-decoration: none;
+                                        position: relative;
+
+                                        &::after {
+                                            position: absolute;
+                                            content: "";
+                                            bottom: -7px;
+                                            left: 0px;
+                                            height: 4px;
+                                            border-radius: 10px;
+                                            width: 100%;
+                                            background-color: transparent;
+                                        }
+
+                                        img {
+                                            height: 30px;
+                                            filter: invert(11%) sepia(61%) saturate(1573%) hue-rotate(208deg) brightness(89%) contrast(91%);
+                                        }
+                                    }
+
+                                    &.active {
+                                        a {
+                                            color: #1380C3;
+
+                                            &::after {
+                                                background-color: #1380C3;
+                                            }
+
+                                            img {
+                                                filter: invert(43%) sepia(85%) saturate(532%) hue-rotate(158deg) brightness(86%) contrast(96%);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
 
@@ -849,7 +903,22 @@ body {
         display: flex;
         width: 500px;
         align-items: center;
-        justify-content: center;
+        padding-left: 13px;
+        padding-top: 5px;
+
+        ul {
+            li {
+                a {
+                    color: #1d2650;
+
+                    &.active {
+                        color: #333;
+                        background-color: #dceaff;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
     }
 
     .from-to-fling-main {
@@ -857,6 +926,25 @@ body {
 
         .one-round-multy-fly {
             .search-main-section {
+                position: relative;
+
+                .bottom-search-main {
+                    position: absolute;
+                    bottom: -149px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+
+                    @media (max-width:575px) {
+                        bottom: -35px;
+                    }
+
+                    .filter-main-search {
+                        width: 200px;
+                        border-radius: 60px;
+                    }
+                }
+
                 ul {
                     &.one-round-sec {
                         display: flex;
@@ -864,9 +952,123 @@ body {
                         width: 100%;
                         padding: 0.5rem 0rem;
 
+                        @media (max-width:575px) {
+                            flex-wrap: wrap !important;
+                        }
+
                         li {
                             border: 1px solid#ddd;
                             height: 100px;
+                            cursor: pointer;
+                            padding: 10px;
+
+                            @media (max-width:575px) {
+                                width: 50% !important;
+                                height: 85px;
+                                padding: 5px 10px;
+
+                            }
+
+                            &:hover {
+                                background-color: rgb(179, 213, 234);
+                            }
+
+                            &.hover-none {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+
+                                &:hover {
+                                    background-color: transparent !important;
+                                }
+                            }
+
+                            .trav-sec {
+                                .trav_count {
+                                    width: 20px !important;
+
+                                    &:focus {
+                                        background-color: transparent !important;
+                                        cursor: pointer !important;
+                                    }
+                                }
+                            }
+
+
+                            label {
+                                font-size: 14px;
+                                line-height: 17px;
+                                color: #333;
+                                cursor: pointer;
+                            }
+
+                            input {
+                                &.form-control {
+                                    border: 0px;
+                                    background-color: transparent;
+                                    height: 30px !important;
+                                    line-height: 15px;
+                                    padding: 5px 0px;
+                                    font-size: 16px;
+                                    color: #333;
+                                    font-weight: 500;
+                                    cursor: pointer;
+
+                                    &:focus {
+                                        box-shadow: none;
+                                        outline: none;
+                                    }
+
+                                    &.hasDatepicker {
+                                        &:focus {
+                                            background-color: #fff;
+                                            cursor: initial;
+                                            box-shadow: none;
+                                            outline: none;
+                                        }
+                                    }
+
+                                    &:first-child {
+                                        line-height: 17px;
+                                        font-size: 25px;
+                                        font-weight: 700;
+                                        cursor: pointer;
+
+                                        @media (max-width:575px) {
+                                            font-size: 20px;
+                                        }
+
+                                        &:focus {
+                                            background-color: #fff;
+                                            cursor: initial;
+                                            box-shadow: none;
+                                            outline: none;
+                                        }
+                                    }
+                                }
+                            }
+
+                            input {
+                                &#from_city {
+                                    line-height: 17px;
+                                    font-size: 25px;
+                                    font-weight: 700;
+
+                                    @media (max-width:575px) {
+                                        font-size: 20px;
+                                    }
+                                }
+
+                                &#to_city {
+                                    line-height: 17px;
+                                    font-size: 25px;
+                                    font-weight: 700;
+
+                                    @media (max-width:575px) {
+                                        font-size: 20px;
+                                    }
+                                }
+                            }
 
                             &.from-fly {
                                 width: 25%;
@@ -1066,6 +1268,10 @@ body {
                                 width: 15%;
                                 border-right: 0px;
 
+                                &.full-departure-fly {
+                                    width: 30%;
+                                }
+
                                 &.departure-fly-multi {
                                     width: 30% !important;
                                 }
@@ -1088,7 +1294,7 @@ body {
                                     display: flex;
                                     align-items: center;
                                     flex-direction: column;
-                                    justify-content: center;
+                                    // justify-content: center;
                                     top: 95px;
                                     left: 0px;
                                     z-index: 9;
@@ -1104,7 +1310,11 @@ body {
                                         i {
                                             &.close-popup-btn {
                                                 cursor: pointer;
-                                                font-size: 20px;
+                                                font-size: 30px;
+                                                color: red;
+                                                position: relative;
+                                                top: -4px;
+                                                right: -6px;
 
                                                 &:focus {
                                                     opacity: 0.7;
@@ -1113,7 +1323,90 @@ body {
                                         }
                                     }
 
-                                    .travelllers-class-select-1 {}
+                                    .travelllers-class-select-1 {
+                                        span {
+                                            &.pcount {
+                                                font-size: 16px;
+                                                font-weight: 600;
+                                                color: #333;
+                                                width: 67px;
+                                                text-align: right;
+                                                display: inline-block;
+                                            }
+                                        }
+
+                                        button {
+                                            font-size: 2rem;
+                                            padding: 0px 15px 7px 15px !important;
+                                            line-height: 30px;
+                                        }
+
+                                        input {
+                                            width: 50px;
+                                            color: #333;
+                                            border-radius: 4px;
+                                        }
+                                    }
+
+                                    button {
+                                        &.apply-btn {
+                                            margin-top: 20px;
+                                        }
+                                    }
+
+                                    .travelllers-class-select-2 {
+                                        margin-top: 15px;
+
+                                        span {
+                                            &.pcount {
+                                                font-size: 16px;
+                                                font-weight: 600;
+                                                color: #333;
+                                                width: 67px;
+                                                text-align: right;
+                                                display: inline-block;
+                                            }
+                                        }
+
+                                        button {
+                                            font-size: 2rem;
+                                            padding: 0px 15px 7px 15px !important;
+                                            line-height: 30px;
+                                        }
+
+                                        input {
+                                            width: 50px;
+                                            color: #333;
+                                            border-radius: 4px;
+                                        }
+                                    }
+
+                                    .travelllers-class-select-3 {
+                                        margin-top: 15px;
+
+                                        span {
+                                            &.pcount {
+                                                font-size: 16px;
+                                                font-weight: 600;
+                                                color: #333;
+                                                width: 67px;
+                                                text-align: right;
+                                                display: inline-block;
+                                            }
+                                        }
+
+                                        button {
+                                            font-size: 2rem;
+                                            padding: 0px 15px 7px 15px !important;
+                                            line-height: 30px;
+                                        }
+
+                                        input {
+                                            width: 50px;
+                                            color: #333;
+                                            border-radius: 4px;
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -1127,11 +1420,17 @@ body {
         padding: 30px 0px;
         display: flex;
         align-items: center;
-        gap: 2rem;
+        gap: 1.5rem;
+
+        @media (max-width:575px) {
+            flex-direction: column;
+        }
 
         h4 {
             &.select-type-title {
-                font-size: 1rem;
+                font-size: 1.2rem;
+                line-height: 25px;
+                margin-top: -3px;
             }
         }
 
@@ -1139,6 +1438,31 @@ body {
             display: flex;
             align-items: center;
             justify-content: center;
+
+            .form-check {
+                display: flex;
+
+                label {
+                    line-height: 16px;
+                }
+            }
         }
     }
+}
+
+a {
+    &.btn-success {
+        color: #fff !important;
+    }
+}
+
+a {
+    &.btn-danger {
+        color: #fff !important;
+    }
+}
+
+.faq-row-main {
+    height: 140px;
+    overflow: auto;
 }

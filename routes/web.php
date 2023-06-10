@@ -32,7 +32,14 @@ Route::get('/step3', [FormController::class, 'step3'])->name('step3');
 Route::post('/step3', [FormController::class, 'postStep3'])->name('postStep3');
 
 
+Route::get('/hotel', [FormController::class, 'hotel'])->name('hotel');
+Route::get('/visa', [FormController::class, 'visa'])->name('visa');
+Route::get('/chartered', [FormController::class, 'chartered'])->name('chartered');
+Route::get('/activities', [FormController::class, 'activities'])->name('activities');
+
 Route::get('/success', [FormController::class, 'success'])->name('success');
+
+Route::get('/flight-search', [FormController::class, 'flightsearch'])->name('flightsearch');
 
 
 Route::controller(UserAuthController::class)->group(function(){

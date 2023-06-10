@@ -194,6 +194,10 @@ $(document).ready(function () {
         $(this).parent().parent().addClass("d-none");
     });
 
+    $(".apply-btn").click(function () {
+        $(this).parent().addClass("d-none");
+    });
+
     // $("body").click(function () {
     //     $(".travelllers-class-select-popup").hide();
     // });
@@ -299,7 +303,7 @@ function addfaqs() {
     html += '<li class="from-fly"><label for="from_city">From</label><input class="form-control" id="from_city" type="text" value="Dhaka" name="from_city" /><input class="form-control" id="from_city_short_apt_name" type="text" value="DAC, Hazrat Shahjalal International Airport Bangladesh" name="from_city_short_apt_name" /></li>';
     html += '<li class="to-fly"><label for="to_city">To</label><input class="form-control" id="to_city" type="text" value="Coxs Bazar" name="to_city" /><input class="form-control" id="to_city_short_apt_name" type="text" value="CXB, Coxs Bazar" name="to_city_short_apt_name" /></li>';
     html += '<li class="departure-fly departure-fly-multi"><label for="from">Departure</label><input type="text" class="form-control" id="from" name="dept_date_from" value="11 Jun 2023, Saturday" placeholder="11 Jun 2023, Saturday" /></li>';
-    html += '<li class="departure-fly"><button class="badge badge-danger" onclick="$(\'#faqs-row' + faqs_row + '\').remove();"><i class="fa fa-trash"></i> Delete</button></li>';
+    html += '<li class="travel-class-fly hover-none"><a href="javascript:void(0)" class="btn btn-danger" onclick="$(\'#faqs-row' + faqs_row + '\').remove();"><i class="fa-regular fa-trash-can"></i> Delete</a></li>';
 
     html += '</ul>';
 

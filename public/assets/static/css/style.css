@@ -15293,11 +15293,16 @@ input#myhiddenInput {
 }
 
 .StSliderFilter>button.mdi-chevron-left {
-    border-right: 1px solid #e5e5ea
+    border-right: 1px solid #e5e5ea;
+    border-color: #e5e5ea !important;
+    border-bottom: 1px solid #e5e5ea;
 }
 
 .StSliderFilter>button.mdi-chevron-right {
-    border-left: 1px solid #e5e5ea
+    border-left: 1px solid #e5e5ea;
+    border-color: #e5e5ea !important;
+    border-right: 1px solid #e5e5ea;
+    border-bottom: 1px solid #e5e5ea;
 }
 
 .StSliderFilter>button.mdi-chevron-right:before {
@@ -15488,7 +15493,9 @@ input#myhiddenInput {
     width: 33.333333%;
     border-right: 1px solid #e5e5ea;
     padding: 4px 16px;
-    transition: all .2s ease-in
+    transition: all .2s ease-in;
+    border-color: #e5e5ea !important;
+    border-bottom: 0px;
 }
 
 .FlightDealFilter .deal path {
@@ -15540,7 +15547,7 @@ input#myhiddenInput {
 }
 
 .FlightDealFilter .deal .text {
-    text-align: left
+    text-align: left line-height: 30px;
 }
 
 .FlightDealFilter .deal .text span {

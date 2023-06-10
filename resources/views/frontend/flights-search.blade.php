@@ -1,184 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-      <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-      <title>Rayan Trip</title>
-      <meta name="description"
-            content="Rayan Online travel agency in Bangladesh. Find cheap flights, hotel deals, holiday packages &amp; visas with rayantoursandtransportation.com." />
-      <meta property="og:title" content="Rayan Trip" />
-      <meta property="og:image:alt" content="Rayan Trip" />
-
-      <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/icons/favicon-logo.png" />
-      <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/icons/favicon-logo.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/icons/favicon-logo.png" />
-      <link rel="icon" href="./assets/images/icons/favicon-logo.png" />
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-            crossorigin="anonymous" />
-      <link rel="stylesheet" href="https://cdn.materialdesignicons.com/6.5.95/css/materialdesignicons.min.css" />
-      <link rel='stylesheet' href='https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css'>
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true" />
-
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-
-      <link rel="stylesheet" href="./assets/static/css/custom.css">
-
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link data-next-font="" rel="preconnect" href="/" crossorigin="anonymous" />
-
-      <link rel='stylesheet' href='https://rawgit.com/kenwheeler/slick/master/slick/slick.css'>
-      <link rel='stylesheet' href='https://rawgit.com/kenwheeler/slick/master/slick/slick-theme.css'>
-
-      <link rel="stylesheet" href="./assets/static/css/style.css" />
-      <link rel="stylesheet" href="./assets/static/css/styles.css" />
-      <link rel="stylesheet" href="./assets/static/css/auth.css" />
-</head>
-
-<body>
-      <nav class="navbar navbar-expand-xl fixed-top navbar-light header-top-menu-sec">
-            <div class="container position-relative">
-                  <a class="navbar-brand" href="index.html">
-                        <img loading="lazy" src="./assets/images/icons/logo-web.png" alt="Rayan Trip" />
-                  </a>
-                  <button onclick="openNav()" class="navbar-toggler align-self-start" type="button">
-                        <span class="navbar-toggler-icon"></span>
-                  </button>
-
-                  <div id="mySidenav" class="sidenav">
-                        <a class="navbar-brand" href="index.html">
-                              <img loading="lazy" src="./assets/images/icons/logo-web.png" alt="Rayan Trip" />
-                        </a>
-                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                        <a href="#">Flight</a>
-                        <a href="#">Hotel</a>
-                        <a href="#">Charter Flight</a>
-                        <a href="#">Activities</a>
-                        <a href="#">Holiday Package</a>
-                  </div>
-
-                  <div class="navbar-collapse" id="navbarNavAltMarkup">
-                        <div class="navbar-item d-flex flex-column flex-xl-row">
-                              <ul class="navbar-nav">
-                                    <li class="nav-item">
-                                          <a class="nav-link d-flex align-items-center" href="/flight">
-                                                <img src="./assets/images/icons/upper-offer.png" alt="...">
-                                                <div class="menu-right-sec">
-                                                      <span class="big-font">SuperOffers</span>
-                                                      <p class="small-font">
-                                                            Explore great deals & offers
-                                                      </p>
-                                                </div>
-                                          </a>
-                                    </li>
-                                    <li class="nav-item">
-                                          <a class="nav-link d-flex align-items-center" href="/hotel">
-                                                <img src="./assets/images/icons/gift-card.png" alt="...">
-                                                <div class="menu-right-sec">
-                                                      <span class="big-font">Gift Cards</span>
-                                                      <p class="small-font">
-                                                            Travels Gift Card
-                                                      </p>
-                                                </div>
-                                          </a>
-                                    </li>
-                                    <li class="nav-item">
-                                          <a class="nav-link d-flex align-items-center" href="/hotel">
-                                                <img src="./assets/images/icons/rayan-trip.png" alt="...">
-                                                <div class="menu-right-sec">
-                                                      <span>Rayan Trips</span>
-                                                      <p class="small-font">
-                                                            Manage your bookings
-                                                      </p>
-                                                </div>
-                                          </a>
-                                    </li>
-                              </ul>
-                              <div class="select-carrency d-flex align-items-center">
-                                    <div class="full-currency-sction">
-                                          <div class="selected-curr">
-                                                <img src="./assets/images/icons/bd-flag.png" alt="...">
-                                                <span>
-                                                      <span class="currency bdt-carrency">BDT</span>
-                                                      <span class="currency aed-carrency d-none">AED</span>
-                                                      <span class="currency usd-carrency d-none">USD</span>
-                                                      <i class="fa-solid fa-chevron-down"></i>
-                                                </span>
-                                          </div>
-                                          <form action="#" method="POST">
-                                                <div class="currency-popup">
-                                                      <div class="currencies">
-                                                            <div class="currency-popup-section">
-                                                                  <h4>Region</h4>
-                                                                  <span class="region-list region-list-bdt">
-                                                                        <span class="left-side">
-                                                                              <img src="./assets/images/icons/bd-flag.png"
-                                                                                    alt="...">
-                                                                              Bangladesh
-                                                                        </span>
-                                                                        <span class="right-side">
-                                                                              <i
-                                                                                    class="fa-solid fa-check bdt-carrency"></i>
-                                                                        </span>
-                                                                  </span>
-                                                                  <span class="region-list region-list-aed">
-                                                                        <span class="left-side">
-                                                                              <img src="./assets/images/icons/bd-flag.png"
-                                                                                    alt="...">
-                                                                              Arab Emirates
-                                                                        </span>
-                                                                        <span class="right-side">
-                                                                              <i
-                                                                                    class="fa-solid fa-check aed-carrency d-none"></i>
-                                                                        </span>
-                                                                  </span>
-                                                                  <span class="region-list region-list-usd">
-                                                                        <span class="left-side">
-                                                                              <img src="./assets/images/icons/bd-flag.png"
-                                                                                    alt="...">
-                                                                              United State
-                                                                        </span>
-                                                                        <span class="right-side">
-                                                                              <i
-                                                                                    class="fa-solid fa-check usd-carrency d-none"></i>
-                                                                        </span>
-                                                                  </span>
-                                                            </div>
-                                                            <div class="currency-popup-right">
-                                                                  <h4>Currency</h4>
-                                                                  <span>
-                                                                        <span class="currency bdt-carrency">BDT</span>
-                                                                        <span
-                                                                              class="currency aed-carrency d-none">AED</span>
-                                                                        <span
-                                                                              class="currency usd-carrency d-none">USD</span>
-                                                                        <i class="fa-solid fa-check"></i>
-                                                                  </span>
-                                                            </div>
-                                                      </div>
-                                                      <div class="apply-full">
-                                                            <button type="submit" class="apply-curr"
-                                                                  href="#">Apply</button>
-                                                      </div>
-                                                </div>
-                                          </form>
-                                    </div>
-                                    <ul class="profile-section">
-                                          <li class="nav-item">
-                                                <a class="nav-link" href="sign-in.html">
-                                                      Sign In
-                                                </a>
-                                          </li>
-                                    </ul>
-                              </div>
-                        </div>
-                  </div>
-            </div>
-      </nav>
+@include('layout.frontend.header')
 
       <section class="ServiceSearchUpdateComponent search-panel-new update-search pt-5 mt-5">
-            <div class="searched-parameters-wrap pt-5 mt-5">
+            <div class="searched-parameters-wrap">
                   <div class="container">
                         <div class="row">
                               <div class="col-lg-12">
@@ -186,14 +9,16 @@
                                           <div class="details">
                                                 <div class="text">
                                                       <h4>
-                                                            DAC<!-- -->(<!-- -->Dhaka<!-- -->) -<!-- -->
-                                                            <!-- -->CXB<!-- -->(<!-- -->Cox's
-                                                            Bazar<!-- -->)<span>(<!-- -->Economy<!-- -->)</span>
+                                                      <span style="width:34px; height:25px; overflow: hidden;">{{ $step1Data['from_city_short_apt_name'] }}</span><!-- -->(<!-- -->{{ $step1Data['from_city'] }}<!-- -->) -<!-- -->
+                                                            <!-- --><span style="width:34px; height:25px; overflow: hidden;">{{ $step1Data['to_city_short_apt_name'] }}</span><!-- -->(<!-- -->{{ $step1Data['to_city'] }}<!-- -->)<span>(<!-- -->Economy<!-- -->)</span>
                                                       </h4>
                                                       <p>
-                                                            9th June 2023<!-- -->
-                                                            - 10th June 2023<!-- -->
-                                                            | Adult: 1
+                                                      {{ $step1Data['dept_date_from'] }}<!-- -->
+                                                            - Return no<!-- -->
+                                                            | Adult, Children, Infants : {{ $step1Data['trav_count'] }}
+                                                      </p>
+                                                      <p>
+                                                      <span><b>Fare Type :</b></span> {{ $step1Data['fare_type'] }}
                                                       </p>
                                                 </div>
                                           </div>
@@ -204,17 +29,15 @@
                                                 <i class="mdi mdi-close"></i><span
                                                       class="MuiTouchRipple-root mui-style-w0pj6f"></span>
                                           </button>
-                                          <button
-                                                class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge mui-btn mui-style-1jvn1gt"
-                                                tabindex="0" type="button">
-                                                Modify Search<span class="MuiTouchRipple-root mui-style-w0pj6f"></span>
-                                          </button>
+                                          <a href="{{ route('index') }}" class="btn btn-primary">
+                                                Back To Home
+</a>
                                     </div>
                               </div>
                         </div>
                   </div>
             </div>
-            <div class="container">
+            <div class="container d-none">
                   <div class="row">
                         <div class="col-lg-12">
                               <div class="filter-body-sec h-100">
@@ -246,7 +69,7 @@
                                                       id="pills-one-way">
                                                       <div class="search-main-section">
                                                             <!----------------------------- Start One Way First Form ------------------------------->
-                                                            <form action="#" method="GET">
+                                                            <!-- <form action="#" method="GET">
                                                                   <ul class="one-round-sec">
                                                                         <li class="from-fly">
                                                                               <label for="from_city">From</label>
@@ -277,11 +100,7 @@
                                                                                     placeholder="11 Jun 2023, Saturday">
                                                                         </li>
                                                                         <li class="return-fly">
-                                                                              <!-- <label for="to">Return</label>
-                                                                              <input type="text" class="form-control" id="to"
-                                                                                    name="return_date_to"
-                                                                                    value="12 Jun 2023, Sunday"
-                                                                                    placeholder="12 Jun 2023, Sunday"> -->
+                                                                             
                                                                         </li>
                                                                         <li class="travel-class-fly">
                                                                               <label for="trav_count">Travellers &
@@ -411,7 +230,7 @@
                                                                   </div>
                                                                   <button type="submit"
                                                                         class="btn btn-primary">Search</button>
-                                                            </form>
+                                                            </form> -->
                                                             <!----------------------------- end Form ------------------------------->
                                                       </div>
                                                 </div>
@@ -419,7 +238,7 @@
                                                       id="pills-round-trip">
                                                       <div class="search-main-section">
                                                             <!----------------------------- Start Round Trip Second Form ------------------------------->
-                                                            <form action="#" method="GET">
+                                                            <!-- <form action="#" method="GET">
                                                                   <ul class="one-round-sec">
                                                                         <li class="from-fly">
                                                                               <label for="from_city">From</label>
@@ -584,7 +403,7 @@
                                                                   </div>
                                                                   <button type="submit"
                                                                         class="btn btn-primary">Search</button>
-                                                            </form>
+                                                            </form> -->
                                                             <!----------------------------- Round Trip end Form ------------------------------->
                                                       </div>
                                                 </div>
@@ -592,7 +411,7 @@
                                                       id="pills-multi-city">
                                                       <div class="search-main-section">
                                                             <!----------------------------- Start Multi City Third Form ------------------------------->
-                                                            <form action="#" method="GET">
+                                                            <!-- <form action="#" method="GET">
                                                                   <ul class="one-round-sec">
                                                                         <li class="from-fly">
                                                                               <label for="from_city">From</label>
@@ -622,13 +441,7 @@
                                                                                     value="11 Jun 2023, Saturday"
                                                                                     placeholder="11 Jun 2023, Saturday">
                                                                         </li>
-                                                                        <!-- <li class="return-fly">
-                                                                              <label for="to">Return</label>
-                                                                              <input type="text" class="form-control" id="to"
-                                                                                    name="return_date_to"
-                                                                                    value="12 Jun 2023, Sunday"
-                                                                                    placeholder="12 Jun 2023, Sunday">
-                                                                        </li> -->
+                                                                       
                                                                         <li class="travel-class-fly">
                                                                               <label for="trav_count">Travellers &
                                                                                     Class</label>
@@ -806,7 +619,7 @@
                                                                   </div>
                                                                   <button type="submit"
                                                                         class="btn btn-primary">Search</button>
-                                                            </form>
+                                                            </form> -->
                                                             <!----------------------------- Multi City end Form ------------------------------->
                                                       </div>
                                                 </div>
@@ -851,9 +664,9 @@
                                           <h5 class="filterReset">
                                                 <span>Sort &amp; Filter</span>
                                                 <button
-                                                      class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall mui-style-1ks6mmq"
-                                                      tabindex="0" type="button">
-                                                      RESET<span class="MuiTouchRipple-root mui-style-w0pj6f"></span>
+                                                class="btn btn-info px-2"
+                                                type="button">
+                                                RESET <i class="fa-solid fa-arrows-rotate"></i>
                                                 </button>
                                           </h5>
                                           <div class="filter inputRange">
@@ -868,6 +681,7 @@
                                                                   <p>Maximum Price</p>
                                                                   <strong><span>12,157</span></strong>
                                                             </div>
+                                                            
                                                       </div>
                                                       <span
                                                             class="MuiSlider-root MuiSlider-colorPrimary MuiSlider-sizeMedium mui-style-1bww011">
@@ -907,6 +721,8 @@
                                                                   </span>
                                                             </span>
                                                       </span>
+                                                      <label for="customRange" class="form-label">Custom range</label>
+<input type="range" class="form-range" id="customRange">
                                                 </div>
                                           </div>
                                           <div class="filter">
@@ -1348,6 +1164,9 @@
                               </div>
                               <div>
                                     <div class="single-result-component Return">
+                                          <!-- Step 2 Form -->
+                                          <form method="post" action="{{ route('postStep2') }}">
+                                          @csrf
                                           <div class="main-body">
                                                 <div class="left">
                                                       <div class="FlightRowComponent listCompact">
@@ -1463,18 +1282,16 @@
                                                                         8,997</span></span>
                                                       </div>
                                                       <div class="btn-cont">
-                                                            <a color="primary" variant="contained" target="_blank"
-                                                                  href="/flight-payment?searchId=452f0810-0565-11ee-a85e-d773c6d245e2&amp;sessionId=dbebfc1d-d54c-5a02-8f2e-cec7da6ca64d&amp;sequenceCode=7d17fa00db590eeee5ea2750d40e8fd7bg2">
-                                                                  <button
-                                                                        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium mui-style-15g1n16"
-                                                                        tabindex="0" type="button" target="_blank">
-                                                                        Book Now<span
-                                                                              class="MuiTouchRipple-root mui-style-w0pj6f"></span>
-                                                                  </button>
-                                                            </a>
+                                                      <input type="hidden" name="package" value="Biman Bangladesh Airlines BG433" required>
+                                                      <button class="btn btn-primary" type="submit">
+                                                            Book Now
+                                                      </button>
+                                                           
                                                       </div>
                                                 </div>
                                           </div>
+                                    </form>
+
                                           <div id="collaseId1" class="collapse">
                                                 <div class="body-details">
                                                       <div class="segment-details">
@@ -1671,7 +1488,8 @@
                                                 <div class="tripCoinOffers">
                                                       <div class="tripCoin"><img loading="lazy"
                                                                   src="/images/icons/tripCoin.png"
-                                                                  alt="" /><span>130</span></div>
+                                                                  alt="" /><span>130</span>
+                                                      </div>
                                                 </div>
                                                 <div class="right">
                                                       <div class="showMore"><span>Show More </span><i
@@ -1680,6 +1498,8 @@
                                           </div>
                                     </div>
                                     <div class="single-result-component Return">
+                                          <form method="post" action="{{ route('postStep2') }}">
+                                          @csrf
                                           <div class="main-body">
                                                 <div class="left">
                                                       <div class="FlightRowComponent listCompact">
@@ -1793,18 +1613,14 @@
                                                                         9,598</span></span>
                                                       </div>
                                                       <div class="btn-cont">
-                                                            <a color="primary" variant="contained" target="_blank"
-                                                                  href="/flight-payment?searchId=452f0810-0565-11ee-a85e-d773c6d245e2&amp;sessionId=dbebfc1d-d54c-5a02-8f2e-cec7da6ca64d&amp;sequenceCode=3ys8j1lim2owu4vq1">
-                                                                  <button
-                                                                        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium mui-style-15g1n16"
-                                                                        tabindex="0" type="button" target="_blank">
-                                                                        Book Now<span
-                                                                              class="MuiTouchRipple-root mui-style-w0pj6f"></span>
-                                                                  </button>
-                                                            </a>
+                                                      <input type="hidden" name="package" value="Airlines BG433" required>
+                                                      <button class="btn btn-primary" type="submit">
+                                                            Book Now
+                                                      </button>
                                                       </div>
                                                 </div>
                                           </div>
+                                    </form>
                                           <div id="collaseId2" class="collapse">
                                                 <div class="body-details">
                                                       <div class="segment-details">
@@ -2008,6 +1824,8 @@
                                           </div>
                                     </div>
                                     <div class="single-result-component Return">
+                                          <form method="post" action="{{ route('postStep2') }}">
+                                          @csrf
                                           <div class="main-body">
                                                 <div class="left">
                                                       <div class="FlightRowComponent listCompact">
@@ -2082,18 +1900,14 @@
                                                                         8,998</span></span>
                                                       </div>
                                                       <div class="btn-cont">
-                                                            <a color="primary" variant="contained" target="_blank"
-                                                                  href="/flight-payment?searchId=452f0810-0565-11ee-a85e-d773c6d245e2&amp;sessionId=dbebfc1d-d54c-5a02-8f2e-cec7da6ca64d&amp;sequenceCode=3ys8j1lim2otzy12BG1">
-                                                                  <button
-                                                                        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium mui-style-15g1n16"
-                                                                        tabindex="0" type="button" target="_blank">
-                                                                        Book Now<span
-                                                                              class="MuiTouchRipple-root mui-style-w0pj6f"></span>
-                                                                  </button>
-                                                            </a>
+                                                      <input type="hidden" name="package" value="Tiger Airline BG443" required>
+                                                      <button class="btn btn-primary" type="submit">
+                                                            Book Now
+                                                      </button>
                                                       </div>
                                                 </div>
                                           </div>
+                                    </form>
                                           <div id="collaseId3" class="collapse">
                                                 <div class="body-details">
                                                       <div class="segment-details">
@@ -2299,6 +2113,8 @@
                                           </div>
                                     </div>
                                     <div class="single-result-component Return">
+                                          <form method="post" action="{{ route('postStep2') }}">
+                                          @csrf
                                           <div class="main-body">
                                                 <div class="left">
                                                       <div class="FlightRowComponent listCompact">
@@ -2371,18 +2187,14 @@
                                                                         9,600</span></span>
                                                       </div>
                                                       <div class="btn-cont">
-                                                            <a color="primary" variant="contained" target="_blank"
-                                                                  href="/flight-payment?searchId=452f0810-0565-11ee-a85e-d773c6d245e2&amp;sessionId=dbebfc1d-d54c-5a02-8f2e-cec7da6ca64d&amp;sequenceCode=e1956dd48659c900b29ca813e2f006a72a10">
-                                                                  <button
-                                                                        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium mui-style-15g1n16"
-                                                                        tabindex="0" type="button" target="_blank">
-                                                                        Book Now<span
-                                                                              class="MuiTouchRipple-root mui-style-w0pj6f"></span>
-                                                                  </button>
-                                                            </a>
+                                                      <input type="hidden" name="package" value="Tiger Airline BG443" required>
+                                                      <button class="btn btn-primary" type="submit">
+                                                            Book Now
+                                                      </button>
                                                       </div>
                                                 </div>
                                           </div>
+                                    </form>
                                           <div id="collaseId4" class="collapse">
                                                 <div class="body-details">
                                                       <div class="segment-details">
@@ -2586,6 +2398,8 @@
                                           </div>
                                     </div>
                                     <div class="single-result-component Return">
+                                          <form method="post" action="{{ route('postStep2') }}">
+                                          @csrf
                                           <div class="main-body">
                                                 <div class="left">
                                                       <div class="FlightRowComponent listCompact">
@@ -2658,18 +2472,14 @@
                                                                         9,600</span></span>
                                                       </div>
                                                       <div class="btn-cont">
-                                                            <a color="primary" variant="contained" target="_blank"
-                                                                  href="/flight-payment?searchId=452f0810-0565-11ee-a85e-d773c6d245e2&amp;sessionId=dbebfc1d-d54c-5a02-8f2e-cec7da6ca64d&amp;sequenceCode=697d9f0b5c2aac7f2eebdb77516e3eb72a11">
-                                                                  <button
-                                                                        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium mui-style-15g1n16"
-                                                                        tabindex="0" type="button" target="_blank">
-                                                                        Book Now<span
-                                                                              class="MuiTouchRipple-root mui-style-w0pj6f"></span>
-                                                                  </button>
-                                                            </a>
+                                                      <input type="hidden" name="package" value="Tiger Airline BG443" required>
+                                                      <button class="btn btn-primary" type="submit">
+                                                            Book Now
+                                                      </button>
                                                       </div>
                                                 </div>
                                           </div>
+                                    </form>
                                           <div id="collaseId5" class="collapse">
                                                 <div class="body-details">
                                                       <div class="segment-details">
@@ -2873,6 +2683,8 @@
                                           </div>
                                     </div>
                                     <div class="single-result-component Return">
+                                          <form method="post" action="{{ route('postStep2') }}">
+                                          @csrf
                                           <div class="main-body">
                                                 <div class="left">
                                                       <div class="FlightRowComponent listCompact">
@@ -2945,18 +2757,14 @@
                                                                         9,600</span></span>
                                                       </div>
                                                       <div class="btn-cont">
-                                                            <a color="primary" variant="contained" target="_blank"
-                                                                  href="/flight-payment?searchId=452f0810-0565-11ee-a85e-d773c6d245e2&amp;sessionId=dbebfc1d-d54c-5a02-8f2e-cec7da6ca64d&amp;sequenceCode=49f459d9c701b575e1f1552487a3ef832a14">
-                                                                  <button
-                                                                        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium mui-style-15g1n16"
-                                                                        tabindex="0" type="button" target="_blank">
-                                                                        Book Now<span
-                                                                              class="MuiTouchRipple-root mui-style-w0pj6f"></span>
-                                                                  </button>
-                                                            </a>
+                                                      <input type="hidden" name="package" value="Tiger Airline BG443" required>
+                                                      <button class="btn btn-primary" type="submit">
+                                                            Book Now
+                                                      </button>
                                                       </div>
                                                 </div>
                                           </div>
+                                    </form>
                                           <div id="collaseId6" class="collapse">
                                                 <div class="body-details">
                                                       <div class="segment-details">
@@ -3160,6 +2968,8 @@
                                           </div>
                                     </div>
                                     <div class="single-result-component Return">
+                                          <form method="post" action="{{ route('postStep2') }}">
+                                          @csrf
                                           <div class="main-body">
                                                 <div class="left">
                                                       <div class="FlightRowComponent listCompact">
@@ -3232,18 +3042,14 @@
                                                                         9,600</span></span>
                                                       </div>
                                                       <div class="btn-cont">
-                                                            <a color="primary" variant="contained" target="_blank"
-                                                                  href="/flight-payment?searchId=452f0810-0565-11ee-a85e-d773c6d245e2&amp;sessionId=dbebfc1d-d54c-5a02-8f2e-cec7da6ca64d&amp;sequenceCode=84ce608505820e07a24b75ac928708ea2a15">
-                                                                  <button
-                                                                        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium mui-style-15g1n16"
-                                                                        tabindex="0" type="button" target="_blank">
-                                                                        Book Now<span
-                                                                              class="MuiTouchRipple-root mui-style-w0pj6f"></span>
-                                                                  </button>
-                                                            </a>
+                                                      <input type="hidden" name="package" value="Tiger Airline BG443" required>
+                                                      <button class="btn btn-primary" type="submit">
+                                                            Book Now
+                                                      </button>
                                                       </div>
                                                 </div>
                                           </div>
+                                    </form>
                                           <div id="collaseId7" class="collapse">
                                                 <div class="body-details">
                                                       <div class="segment-details">
@@ -3447,6 +3253,8 @@
                                           </div>
                                     </div>
                                     <div class="single-result-component Return">
+                                          <form method="post" action="{{ route('postStep2') }}">
+                                          @csrf
                                           <div class="main-body">
                                                 <div class="left">
                                                       <div class="FlightRowComponent listCompact">
@@ -3521,18 +3329,14 @@
                                                                         9,497</span></span>
                                                       </div>
                                                       <div class="btn-cont">
-                                                            <a color="primary" variant="contained" target="_blank"
-                                                                  href="/flight-payment?searchId=452f0810-0565-11ee-a85e-d773c6d245e2&amp;sessionId=dbebfc1d-d54c-5a02-8f2e-cec7da6ca64d&amp;sequenceCode=247a7ed68dd4d788de93c873f8439259bg3">
-                                                                  <button
-                                                                        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium mui-style-15g1n16"
-                                                                        tabindex="0" type="button" target="_blank">
-                                                                        Book Now<span
-                                                                              class="MuiTouchRipple-root mui-style-w0pj6f"></span>
-                                                                  </button>
-                                                            </a>
+                                                      <input type="hidden" name="package" value="Tiger Airline BG443" required>
+                                                      <button class="btn btn-primary" type="submit">
+                                                            Book Now
+                                                      </button>
                                                       </div>
                                                 </div>
                                           </div>
+                                    </form>
                                           <div id="collaseId8" class="collapse">
                                                 <div class="body-details">
                                                       <div class="segment-details">
@@ -3738,6 +3542,8 @@
                                           </div>
                                     </div>
                                     <div class="single-result-component Return">
+                                          <form method="post" action="{{ route('postStep2') }}">
+                                          @csrf
                                           <div class="main-body">
                                                 <div class="left">
                                                       <div class="FlightRowComponent listCompact">
@@ -3812,18 +3618,14 @@
                                                                         9,498</span></span>
                                                       </div>
                                                       <div class="btn-cont">
-                                                            <a color="primary" variant="contained" target="_blank"
-                                                                  href="/flight-payment?searchId=452f0810-0565-11ee-a85e-d773c6d245e2&amp;sessionId=dbebfc1d-d54c-5a02-8f2e-cec7da6ca64d&amp;sequenceCode=3ys8j1lim2ou0112BG2">
-                                                                  <button
-                                                                        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium mui-style-15g1n16"
-                                                                        tabindex="0" type="button" target="_blank">
-                                                                        Book Now<span
-                                                                              class="MuiTouchRipple-root mui-style-w0pj6f"></span>
-                                                                  </button>
-                                                            </a>
+                                                      <input type="hidden" name="package" value="Tiger Airline BG443" required>
+                                                      <button class="btn btn-primary" type="submit">
+                                                            Book Now
+                                                      </button>
                                                       </div>
                                                 </div>
                                           </div>
+                                    </form>
                                           <div id="collaseId9" class="collapse">
                                                 <div class="body-details">
                                                       <div class="segment-details">
@@ -4029,6 +3831,8 @@
                                           </div>
                                     </div>
                                     <div class="single-result-component Return">
+                                          <form method="post" action="{{ route('postStep2') }}">
+                                          @csrf
                                           <div class="main-body">
                                                 <div class="left">
                                                       <div class="FlightRowComponent listCompact">
@@ -4103,18 +3907,14 @@
                                                                         9,598</span></span>
                                                       </div>
                                                       <div class="btn-cont">
-                                                            <a color="primary" variant="contained" target="_blank"
-                                                                  href="/flight-payment?searchId=452f0810-0565-11ee-a85e-d773c6d245e2&amp;sessionId=dbebfc1d-d54c-5a02-8f2e-cec7da6ca64d&amp;sequenceCode=680e23d415fb30a9b39cff4c5a4c4089bs27">
-                                                                  <button
-                                                                        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium mui-style-15g1n16"
-                                                                        tabindex="0" type="button" target="_blank">
-                                                                        Book Now<span
-                                                                              class="MuiTouchRipple-root mui-style-w0pj6f"></span>
-                                                                  </button>
-                                                            </a>
+                                                      <input type="hidden" name="package" value="Tiger Airline BG443" required>
+                                                      <button class="btn btn-primary" type="submit">
+                                                            Book Now
+                                                      </button>
                                                       </div>
                                                 </div>
                                           </div>
+                                    </form>
                                           <div id="collaseId10" class="collapse">
                                                 <div class="body-details">
                                                       <div class="segment-details">
@@ -4349,305 +4149,4 @@
       </section>
 
 
-      <footer class="site-footer">
-            <div class="container">
-                  <div class="row menu-area">
-                        <div class="col-md-3 col-sm-6 col-12">
-                              <h5 class="fw-500">Company</h5>
-                              <ul>
-                                    <li><a href="/about">About Us</a></li>
-                              </ul>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-12">
-                              <h5 class="fw-500">Explore</h5>
-                              <ul>
-                                    <li><a href="/spin.html">Spin to Win</a></li>
-                                    <li><a href="/leaderboard">Leader Board</a></li>
-                                    <li><a href="/hotel-sitemap">Hotel Sitemap</a></li>
-                              </ul>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-12">
-                              <h5 class="fw-500">Help</h5>
-                              <ul>
-                                    <li><a href="/faq">FAQ</a></li>
-                                    <li><a href="tel:+8809617617617">Support Center</a></li>
-                                    <li><a href="/payment-security">Payment Security</a></li>
-                                    <li><a href="/privacy">Privacy Policy</a></li>
-                                    <li><a href="/emifaq">EMI</a></li>
-                              </ul>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-12">
-                              <h5 class="fw-500">Terms &amp; Condition</h5>
-                              <ul>
-                                    <li><a href="/terms">General</a></li>
-                                    <li><a href="/wheel-terms-condition">Spin to Win</a></li>
-                              </ul>
-                        </div>
-                  </div>
-                  <div class="row address-area">
-                        <div class="col-md-4 col-12 mb-4">
-                              <div class="mb-4">
-                                    <h5 class="fw-500">Address</h5>
-                                    <h6 class="fz14 mb-xs-4">Front Office</h6>
-                                    <p class="fz14">
-                                          Rayan Trip. <br />
-                                          Rangs Pearl Tower, 3th Floor,<br />
-                                          House no. 16, Road 12, Block F,<br />
-                                          Mirpur-12, Dhaka 1213, Bangladesh
-                                    </p>
-                                    <h6 class="fz14 mb-xs-4">Corporate Office</h6>
-                                    <p class="fz14 mb-3">
-                                          Rayan Trip.<br />
-                                          Business Tower, rd & 2th Floor<br />
-                                          Plot - 1212/A, Block - A,<br />
-                                          Dhaka 1229, Bangladesh
-                                    </p>
-                              </div>
-                              <div class="row contact-area d-flex">
-                                    <div class="col-md-12">
-                                          <div class="contact email">
-                                                <a href="https://api.whatsapp.com/"
-                                                      class="d-flex align-items-center primary-color fz16">
-                                                      <i class="mdi mdi-whatsapp mr-2"></i>
-                                                      Message us on
-                                                      WhatsApp
-                                                </a>
-                                          </div>
-                                          <div class="contact email mt-2">
-                                                <a href="mailto:ask@makerayantrip"
-                                                      class="d-flex align-items-center primary-color fz16">
-                                                      <i class="mdi mdi-email mr-2"></i>
-                                                      <!-- -->ask@makerayantrip.com
-                                                </a>
-                                          </div>
-                                          <div class="contact phone mt-2">
-                                                <a href="tel:+8809617617617"
-                                                      class="d-flex align-items-center primary-color fz16">
-                                                      <i class="mdi mdi-phone mr-2"></i>
-                                                      <!-- -->+8801X00000000
-                                                </a>
-                                          </div>
-                                          <div class="contact phone mt-2">
-                                                <span class="d-flex align-items-center fz16 primaryColor-color"><i
-                                                            class="mdi mdi-information mr-2"></i>
-                                                      <span>
-                                                            Office Hour : 10 AM - 9
-                                                            PM</span></span>
-                                          </div>
-                                          <div class="social">
-                                                <ul class="d-flex align-items-center">
-                                                      <li>
-                                                            <a href="https://www.facebook.com" target="_blank"
-                                                                  rel="noreferrer">
-                                                                  <img loading="lazy" src="./assets/images/facebook.svg"
-                                                                        alt="" />
-                                                            </a>
-                                                      </li>
-                                                      <li>
-                                                            <a href="http://m.me" target="_blank" rel="noreferrer">
-                                                                  <img loading="lazy"
-                                                                        src="./assets/images/messenger.svg" alt="" />
-                                                            </a>
-                                                      </li>
-                                                      <li>
-                                                            <a href="https://twitter.com" target="_blank"
-                                                                  rel="noreferrer">
-                                                                  <img loading="lazy" src="./assets/images/twitter.svg"
-                                                                        alt="" />
-                                                            </a>
-                                                      </li>
-                                                      <li>
-                                                            <a href="https://www.instagram.com" target="_blank"
-                                                                  rel="noreferrer">
-                                                                  <img loading="lazy"
-                                                                        src="./assets/images/instagram.svg" alt="" />
-                                                            </a>
-                                                      </li>
-                                                      <li>
-                                                            <a href="https://www.youtube.com/" target="_blank"
-                                                                  rel="noreferrer">
-                                                                  <img loading="lazy" src="./assets/images/youtube.svg"
-                                                                        alt="" />
-                                                            </a>
-                                                      </li>
-                                                      <li>
-                                                            <a href="https://www.linkedin.com" target="_blank"
-                                                                  rel="noreferrer">
-                                                                  <img loading="lazy" src="./assets/images/linkedin.svg"
-                                                                        alt="" />
-                                                            </a>
-                                                      </li>
-                                                </ul>
-                                          </div>
-                                    </div>
-                              </div>
-                        </div>
-                        <div class="col-md-8 col-12">
-                              <div class="row">
-                                    <div class="w-2_5 w-xs-12 mb-3">
-                                          <h5 class="fw-500 mb-3 text-nowrap">Accredited Member
-                                          </h5>
-                                          <div class="image">
-                                                <div class="row-sm">
-                                                      <div class="col w-xs-4 mb-3"><img loading="lazy"
-                                                                  src="./assets/images/basis.png" alt="" />
-                                                      </div>
-                                                      <div class="col w-xs-4 mb-3"><img loading="lazy"
-                                                                  src="./assets/images/e-cab.png" alt="" />
-                                                      </div>
-                                                      <div class="col w-xs-4 mb-3"><img loading="lazy"
-                                                                  src="./assets/images/pata.svg" alt="" />
-                                                      </div>
-                                                </div>
-                                          </div>
-                                    </div>
-                                    <div class="w-1_5 w-xs-12 mb-3">
-                                          <h5 class="fw-500 mb-3 text-nowrap">Verified by</h5>
-                                          <div class="image"><img loading="lazy" src="./assets/images/comodoSecure.png"
-                                                      alt="" />
-                                          </div>
-                                    </div>
-                                    <div class="w-1_5 w-xs-12 mb-3">
-                                          <h5 class="fw-500 mb-3 text-nowrap">Authorised by</h5>
-                                          <div class="image"><img loading="lazy" src="./assets/images/iata-logo.png"
-                                                      alt="" />
-                                          </div>
-                                    </div>
-                                    <div class="w-1_5 w-xs-12 mb-3">
-                                          <h5 class="fw-500 mb-3 text-nowrap">Approved Agent
-                                          </h5>
-                                          <div class="image"><img loading="lazy" src="./assets/images/bimanbd.png"
-                                                      alt="" />
-                                          </div>
-                                    </div>
-                              </div>
-                              <div class="row">
-                                    <div class="col-md-12">
-                                          <div class="d-flex">
-                                                <div class="payent-methods mr-3">
-                                                      <h5 class="fw-500 mb-3 text-nowrap">Our
-                                                            Partners</h5>
-                                                      <div class="methods d-flex flex-wrap align-items-center mt-3">
-                                                            <div class="image">
-                                                                  <a href="#" target="_blank" rel="noreferrer">
-                                                                        <img loading="lazy"
-                                                                              src="./assets/images/google-partner.png"
-                                                                              alt="Our Partners" />
-                                                                  </a>
-                                                            </div>
-                                                      </div>
-                                                </div>
-                                                <div class="payent-methods">
-                                                      <h5 class="fw-500 mb-3 text-nowrap">
-                                                            Registered at</h5>
-                                                      <div class="methods d-flex flex-wrap align-items-center mt-3">
-                                                            <div class="image"><img loading="lazy"
-                                                                        src="./assets/images/duns-certified-by.png"
-                                                                        alt="Certified by" />
-                                                            </div>
-                                                      </div>
-                                                </div>
-                                          </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                          <div class="payent-methods weAccept">
-                                                <h5 class="fw-500 mb-3 text-nowrap">We Accept
-                                                </h5>
-                                                <div class="methods d-flex flex-wrap align-items-center mt-3">
-                                                      <div class="image"><img loading="lazy" class="w-100"
-                                                                  src="./assets/images/footer-payment-method.png"
-                                                                  alt="We Accept" /></div>
-                                                </div>
-                                          </div>
-                                    </div>
-                              </div>
-                        </div>
-                  </div>
-                  <div class="copyright mt-4">
-                        <p class="fz14">
-                              Copyright @
-                              <!-- -->2023<!-- -->.
-                              <!-- -->Rayan Trip<!-- -->. All rights reserved.
-                        </p>
-                  </div>
-            </div>
-      </footer>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-      <script src='https://kenwheeler.github.io/slick/slick/slick.js'></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-      <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.1/lodash.min.js'></script>
-      <script src='https://unpkg.com/fuse.js@2.5.0/src/fuse.min.js'></script>
-      <script src='./assets/static/js/airports.js'></script>
-      <script src='./assets/static/js/airportsto.js'></script>
-      <script src="./assets/static/js/custom-airport-to.js"></script>
-      <script src="./assets/static/js/custom-airport.js"></script>
-      <script src='https://code.jquery.com/ui/1.12.1/jquery-ui.js'></script>
-      <script src="./assets/static/js/custom.js"></script>
-
-      <script>
-            $(function () {
-                  var dateFormat = "mm/dd/yy",
-                        from = $("#from")
-                              .datepicker({
-                                    defaultDate: "+1w",
-                                    changeMonth: true,
-                                    changeYear: true,
-                                    minDate: '6/9/2023',
-                                    maxDate: '12/29/2023',
-                                    numberOfMonths: 1
-                              })
-                              .on("change", function () {
-                                    to.datepicker("option", "minDate", getDate(this));
-                              }),
-                        to = $("#to").datepicker({
-                              defaultDate: "+1w",
-                              changeMonth: true,
-                              changeYear: true,
-                              minDate: '5/1/2023',
-                              maxDate: '12/31/2024',
-                              numberOfMonths: 1
-                        })
-                              .on("change", function () {
-                                    from.datepicker("option", "maxDate", getDate(this));
-                              });
-
-                  function getDate(element) {
-                        var date;
-                        try {
-                              date = $.datepicker.parseDate(dateFormat, element.value);
-                        } catch (error) {
-                              date = null;
-                        }
-
-                        return date;
-                  }
-
-                  $("#showTo").click(function () {
-                        $("#from").datepicker("show");
-                  });
-            });
-      </script>
-
-      <script>
-            $(document).ready(function () {
-                  $(".region-list-bdt").click(function () {
-                        $(".bdt-carrency").removeClass("d-none");
-                        $(".aed-carrency").addClass("d-none");
-                        $(".usd-carrency").addClass("d-none");
-                  });
-                  $(".region-list-aed").click(function () {
-                        $(".bdt-carrency").addClass("d-none");
-                        $(".aed-carrency").removeClass("d-none");
-                        $(".usd-carrency").addClass("d-none");
-                  });
-                  $(".region-list-usd").click(function () {
-                        $(".bdt-carrency").addClass("d-none");
-                        $(".aed-carrency").addClass("d-none");
-                        $(".usd-carrency").removeClass("d-none");
-                  });
-            });
-      </script>
-
-</body>
-
-</html>
+@include('layout.frontend.footer')

@@ -39,7 +39,7 @@
 <body>
       <nav class="navbar navbar-expand-xl fixed-top navbar-light header-top-menu-sec">
             <div class="container position-relative">
-                  <a class="navbar-brand" href="index.html">
+                  <a class="navbar-brand" href="{{ route('index') }}">
                         <img loading="lazy" src="./assets/images/icons/rayantrip-logo-final.png" alt="Rayan Trip" />
                   </a>
                   <button onclick="openNav()" class="navbar-toggler align-self-start" type="button">
@@ -47,7 +47,7 @@
                   </button>
 
                   <div id="mySidenav" class="sidenav">
-                        <a class="navbar-brand" href="index.html">
+                        <a class="navbar-brand" href="{{ route('index') }}">
                               <img loading="lazy" src="./assets/images/icons/rayantrip-logo-final.png"
                                     alt="Rayan Trip" />
                         </a>
@@ -159,8 +159,8 @@
                                                             </div>
                                                       </div>
                                                       <div class="apply-full">
-                                                            <button type="submit" class="apply-curr"
-                                                                  href="#">Apply</button>
+                                                            <a type="button" class="apply-curr"
+                                                                  href="{{ route('index') }}">Apply</a>
                                                       </div>
                                                 </div>
                                           </form>

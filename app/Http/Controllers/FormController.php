@@ -13,6 +13,31 @@ class FormController extends Controller
     //     return view('frontend/step1');
     // }
 
+    // public function flightsearch()
+    // {
+    //     return view('frontend/flights-search');
+    // }
+
+    public function hotel()
+    {
+        return view('frontend/hotel');
+    }
+
+    public function visa()
+    {
+        return view('frontend/visa');
+    }
+
+    public function chartered()
+    {
+        return view('frontend/chartered');
+    }
+
+    public function activities()
+    {
+        return view('frontend/activities');
+    }
+
     public function index()
     {
         return view('frontend/index');
@@ -39,7 +64,7 @@ class FormController extends Controller
     {
         $step1Data = $request->session()->get('index');
 
-        return view('frontend/step2', compact('step1Data'));
+        return view('frontend/flights-search', compact('step1Data'));
     }
 
     public function postStep2(Request $request)
@@ -58,7 +83,7 @@ class FormController extends Controller
         $step1Data = $request->session()->get('index');
         $step2Data = $request->session()->get('step2');
 
-        return view('frontend/step3', compact('step1Data', 'step2Data'));
+        return view('frontend/flights-payment', compact('step1Data', 'step2Data'));
     }
 
     public function postStep3(Request $request)
