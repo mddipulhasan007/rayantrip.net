@@ -134,16 +134,24 @@ $(function () {
     var dateFormat = "yy-mm-dd",
         from = $("#from")
             .datepicker({
-                dateFormat: "dd MM yy DD",
+                dateFormat: "dd MM yy",
+            })
+            .on("change", function () {
+                to.datepicker("option", "minDate", getDate(this));
+            }),
+        fromml = $("#fromml")
+            .datepicker({
+                dateFormat: "dd MM yy",
             })
             .on("change", function () {
                 to.datepicker("option", "minDate", getDate(this));
             }),
         to = $("#to").datepicker({
-            dateFormat: "dd MM yy DD",
+            dateFormat: "dd MM yy",
         })
             .on("change", function () {
                 from.datepicker("option", "maxDate", getDate(this));
+                fromml.datepicker("option", "maxDate", getDate(this));
             });
 
     function getDate(element) {
@@ -159,6 +167,10 @@ $(function () {
 
     $("#showTo").click(function () {
         $("#from").datepicker("show");
+    });
+
+    $("#showTo").click(function () {
+        $("#fromml").datepicker("show");
     });
 });
 
@@ -197,6 +209,61 @@ $(document).ready(function () {
     $(".apply-btn").click(function () {
         $(this).parent().addClass("d-none");
     });
+
+    $(".return-script-blank").click(function () {
+        $(".return-fly").addClass("return-open");
+        $(".return-fly").removeClass("blank");
+        $(".round-way-active").addClass("active");
+        $(".one-way-active").removeClass("active");
+    });
+
+    $(".close-return").click(function () {
+        $(".return-fly").removeClass("return-open");
+        $(".return-fly").addClass("blank");
+        $(".round-way-active").removeClass("active");
+        $(".one-way-active").addClass("active");
+    });
+
+    $(".round-way-active").click(function () {
+        $(".return-fly").addClass("return-open");
+        $(".return-fly").removeClass("blank");
+        $(".multi-way-active").removeClass("active");
+        $(".faq-row-main").addClass("d-none");
+    });
+
+    $(".one-way-active").click(function () {
+        $(".return-fly").removeClass("return-open");
+        $(".return-fly").addClass("blank");
+        $(".multi-way-active").removeClass("active");
+        $(".faq-row-main").addClass("d-none");
+    });
+
+    $(".multi-way-active").click(function () {
+        $(".faq-row-main").removeClass("d-none");
+    });
+
+    $(window).on('load', function () {
+        // $("#js-loader").fadeOut(); これだけでOK
+
+        // codepen用
+        function loaderClose() {
+            $("#js-loader").fadeOut();
+        }
+        setTimeout(loaderClose, 3000);
+
+    });
+
+    $(window).on('load', function () {
+        // $("#js-loader").fadeOut(); これだけでOK
+
+        // codepen用
+        function loaderClose() {
+            $("#js-loader-hotel").fadeOut();
+        }
+        setTimeout(loaderClose, 1000);
+
+    });
+
 
     // $("body").click(function () {
     //     $(".travelllers-class-select-popup").hide();
@@ -300,9 +367,9 @@ function addition() {
 var faqs_row = 0;
 function addfaqs() {
     html = '<ul class="one-round-sec" id="faqs-row' + faqs_row + '">';
-    html += '<li class="from-fly"><label for="from_city">From</label><input class="form-control" id="from_city" type="text" value="Dhaka" name="from_city" /><input class="form-control" id="from_city_short_apt_name" type="text" value="DAC, Hazrat Shahjalal International Airport Bangladesh" name="from_city_short_apt_name" /></li>';
-    html += '<li class="to-fly"><label for="to_city">To</label><input class="form-control" id="to_city" type="text" value="Coxs Bazar" name="to_city" /><input class="form-control" id="to_city_short_apt_name" type="text" value="CXB, Coxs Bazar" name="to_city_short_apt_name" /></li>';
-    html += '<li class="departure-fly departure-fly-multi"><label for="from">Departure</label><input type="text" class="form-control" id="from" name="dept_date_from" value="11 Jun 2023, Saturday" placeholder="11 Jun 2023, Saturday" /></li>';
+    html += '<li class="from-fly"><label for="from_city">Flying from</label><input class="form-control" id="from_city" type="text" value="Dhaka" name="from_city" /><input class="form-control" id="from_city_short_apt_name" type="text" value="DAC, Hazrat Shahjalal International Airport Bangladesh" name="from_city_short_apt_name" /></li>';
+    html += '<li class="to-fly"><i class="fa-solid fa-arrow-right-arrow-left exchange-icon"></i><label for="to_city">Flying to</label><input class="form-control" id="to_city" type="text" value="Coxs Bazar" name="to_city" /><input class="form-control" id="to_city_short_apt_name" type="text" value="CXB, Coxs Bazar" name="to_city_short_apt_name" /></li>';
+    html += '<li class="departure-fly departure-fly-multi"><label for="from">Depart on</label><input type="text" class="form-control" id="from" name="dept_date_from" value="11 Jun 2023, Saturday" placeholder="11 Jun 2023, Saturday" /></li>';
     html += '<li class="travel-class-fly hover-none"><a href="javascript:void(0)" class="btn btn-danger" onclick="$(\'#faqs-row' + faqs_row + '\').remove();"><i class="fa-regular fa-trash-can"></i> Delete</a></li>';
 
     html += '</ul>';
@@ -312,3 +379,42 @@ function addfaqs() {
     faqs_row++;
 }
 
+
+
+
+
+
+function format(item, state) {
+    if (!item.id) {
+        return item.text;
+    }
+    var countryUrl = "https://hatscripts.github.io/circle-flags/flags/";
+    var stateUrl = "https://oxguy3.github.io/flags/svg/us/";
+    var url = state ? stateUrl : countryUrl;
+    var img = $("<img>", {
+        class: "img-flag",
+        width: 26,
+        src: url + item.element.value.toLowerCase() + ".svg"
+    });
+    var span = $("<span>", {
+        text: " " + item.text
+    });
+    span.prepend(img);
+    return span;
+}
+
+$(document).ready(function () {
+    $("#countries").select2({
+        templateResult: function (item) {
+            return format(item, false);
+        }
+    });
+});
+
+$(document).ready(function () {
+    $("#countries_nat").select2({
+        templateResult: function (item) {
+            return format(item, false);
+        }
+    });
+});

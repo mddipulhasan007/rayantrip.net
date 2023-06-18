@@ -1,5 +1,9 @@
 @include('layout.frontend.header')
-
+<div class="container-fluid loader" id="js-loader">
+      <div class="row">
+          <img loading="lazy" class="w-100 h-50" src="./assets/images/icons/giphy.gif" alt="">
+      </div>
+</div>
       <section class="ServiceSearchUpdateComponent search-panel-new update-search pt-5 mt-5">
             <div class="searched-parameters-wrap">
                   <div class="container">
@@ -9,16 +13,13 @@
                                           <div class="details">
                                                 <div class="text">
                                                       <h4>
-                                                      <span style="width:34px; height:25px; overflow: hidden;">{{ $step1Data['from_city_short_apt_name'] }}</span><!-- -->(<!-- -->{{ $step1Data['from_city'] }}<!-- -->) -<!-- -->
-                                                            <!-- --><span style="width:34px; height:25px; overflow: hidden;">{{ $step1Data['to_city_short_apt_name'] }}</span><!-- -->(<!-- -->{{ $step1Data['to_city'] }}<!-- -->)<span>(<!-- -->Economy<!-- -->)</span>
+                                                      <span style="width:34px; height:30px; overflow: hidden;">{{ $step1Data['from_city_short_apt_name'] }}</span><!-- -->(<!-- -->{{ $step1Data['from_city'] }}<!-- -->) -<!-- -->
+                                                            <!-- --><span style="width:34px; height:30px; overflow: hidden;">{{ $step1Data['to_city_short_apt_name'] }}</span><!-- -->(<!-- -->{{ $step1Data['to_city'] }}<!-- -->)<span style="font-size:15px;">(<!-- -->{{ $step1Data['fare_type'] }}<!-- -->)</span>
                                                       </h4>
                                                       <p>
                                                       {{ $step1Data['dept_date_from'] }}<!-- -->
-                                                            - Return no<!-- -->
+                                                            - {{ $step1Data['return_date_to'] }}<!-- -->
                                                             | Adult, Children, Infants : {{ $step1Data['trav_count'] }}
-                                                      </p>
-                                                      <p>
-                                                      <span><b>Fare Type :</b></span> {{ $step1Data['fare_type'] }}
                                                       </p>
                                                 </div>
                                           </div>
@@ -31,7 +32,7 @@
                                           </button>
                                           <a href="{{ route('index') }}" class="btn btn-primary">
                                                 Back To Home
-</a>
+                                          </a>
                                     </div>
                               </div>
                         </div>
@@ -106,7 +107,7 @@
                                                                               <label for="trav_count">Travellers &
                                                                                     Class</label>
                                                                               <div
-                                                                                    class="d-flex align-items-center gap-2 trav-sec">
+                                                                                    class="d-flex align-items-center gap-0 trav-sec">
                                                                                     <input type="text"
                                                                                           class="form-control trav_count"
                                                                                           id="trav_count"
@@ -279,7 +280,7 @@
                                                                               <label for="trav_count">Travellers &
                                                                                     Class</label>
                                                                               <div
-                                                                                    class="d-flex align-items-center gap-2 trav-sec">
+                                                                                    class="d-flex align-items-center gap-0 trav-sec">
                                                                                     <input type="text"
                                                                                           class="form-control trav_count"
                                                                                           id="trav_count"
@@ -446,7 +447,7 @@
                                                                               <label for="trav_count">Travellers &
                                                                                     Class</label>
                                                                               <div
-                                                                                    class="d-flex align-items-center gap-2 trav-sec">
+                                                                                    class="d-flex align-items-center gap-0 trav-sec">
                                                                                     <input type="text"
                                                                                           class="form-control trav_count"
                                                                                           id="trav_count"
@@ -1165,7 +1166,7 @@
                               <div>
                                     <div class="single-result-component Return">
                                           <!-- Step 2 Form -->
-                                          <form method="post" action="{{ route('postStep2') }}">
+                                          <form method="post" action="{{ route('postStep2') }}" target="_blank">
                                           @csrf
                                           <div class="main-body">
                                                 <div class="left">
@@ -1290,9 +1291,9 @@
                                                       </div>
                                                 </div>
                                           </div>
-                                    </form>
+                                          </form>
 
-                                          <div id="collaseId1" class="collapse">
+                                          <div id="details1" class="collapse">
                                                 <div class="body-details">
                                                       <div class="segment-details">
                                                             <div>
@@ -1422,65 +1423,56 @@
                                                             </div>
                                                       </div>
                                                       <div class="other-details">
-                                                            <div class="MuiTabs-root st-tab-button-container mui-style-orq8zk"
-                                                                  wrapped="true">
-                                                                  <div class="MuiTabs-scroller MuiTabs-fixed fixed mui-style-1anid1y"
-                                                                        style="overflow: hidden; margin-bottom: 0px;">
-                                                                        <div class="MuiTabs-flexContainer mui-style-k008qs"
-                                                                              role="tablist">
-                                                                              <button
-                                                                                    class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary MuiTab-fullWidth Mui-selected selected tab-button mui-style-19jczph"
-                                                                                    tabindex="0" type="button"
-                                                                                    role="tab" aria-selected="true">
-                                                                                    Refund Policy<span
-                                                                                          class="MuiTouchRipple-root mui-style-w0pj6f"></span>
-                                                                              </button>
-                                                                              <button
-                                                                                    class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary MuiTab-fullWidth tab-button mui-style-19jczph"
-                                                                                    tabindex="-1" type="button"
-                                                                                    role="tab" aria-selected="false">
-                                                                                    Baggage<span
-                                                                                          class="MuiTouchRipple-root mui-style-w0pj6f"></span>
-                                                                              </button>
-                                                                        </div>
-                                                                        <span class="MuiTabs-indicator indicator mui-style-wsnom4"
-                                                                              style="left: 0px; width: 0px;"></span>
+                                                           
+                                                                  <div class="nav d-flex nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                                                        <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Refund Policy</button>
+                                                                        <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Baggage</button>
                                                                   </div>
-                                                            </div>
-                                                            <div class="MuiTypography-root MuiTypography-body1 TabPanel mui-style-uj1p52"
-                                                                  role="tabpanel" id="simple-tabpanel-0"
-                                                                  aria-labelledby="simple-tab-0">
-                                                                  <div p="3">
-                                                                        <div class="TabPanelInner">
-                                                                              <p class="fz12">Refunds and Date Changes
-                                                                                    are done as per the following
-                                                                                    policies.</p>
-                                                                              <p class="fz12">Refund Amount= Paid Amount
-                                                                                    – (Airline’s Cancellation Fee + ST
-                                                                                    Service Fee).</p>
-                                                                              <p class="fz12">Date Change Amount=
-                                                                                    Airline’s Date Change Fee + Fare
-                                                                                    Difference + ST Service Fee.</p>
-                                                                              <p class="fz10">*ST Convenience fee is
-                                                                                    non-refundable.</p>
-                                                                              <p class="fz10">*ShareTrip does not
-                                                                                    guarantee the accuracy of
-                                                                                    refund/date change fees.</p>
-                                                                              <p class="fz10">*The airline refund/date
-                                                                                    change fee is an estimation and can
-                                                                                    be changed without any prior notice
-                                                                                    by the airlines.</p>
-                                                                              <div>
-                                                                                    <p
-                                                                                          class="fw-600 primaryColor-color fz14 cursor-pointer mt-xs-16">
-                                                                                          Show More Information</p>
+                                                                  <div class="tab-content" id="v-pills-tabContent">
+                                                                     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                                                                        <div p="3">
+                                                                              <div class="TabPanelInner">
+                                                                                    <p class="fz12">Refunds and Date Changes
+                                                                                          are done as per the following
+                                                                                          policies.</p>
+                                                                                    <p class="fz12">Refund Amount= Paid Amount
+                                                                                          – (Airline’s Cancellation Fee + ST
+                                                                                          Service Fee).</p>
+                                                                                    <p class="fz12">Date Change Amount=
+                                                                                          Airline’s Date Change Fee + Fare
+                                                                                          Difference + ST Service Fee.</p>
+                                                                                    <p class="fz10">*ST Convenience fee is
+                                                                                          non-refundable.</p>
+                                                                                    <p class="fz10">*ShareTrip does not
+                                                                                          guarantee the accuracy of
+                                                                                          refund/date change fees.</p>
+                                                                                    <p class="fz10">*The airline refund/date
+                                                                                          change fee is an estimation and can
+                                                                                          be changed without any prior notice
+                                                                                          by the airlines.</p>
+                                                                                    <div>
+                                                                                          <p
+                                                                                                class="fw-600 primaryColor-color fz14 cursor-pointer mt-xs-16">
+                                                                                                Show More Information</p>
+                                                                                    </div>
                                                                               </div>
                                                                         </div>
+                                                                     </div>
+                                                                     <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                                                                        <div p="3">
+                                                                              <div class="TabPanelInner">
+                                                                                    <div class="FlightInfoType FlightBaggageInfo custom-scroll-bar-gray">
+                                                                                          <div class="info-container mb-xs-8">
+                                                                                          <p class="fw-700 fz20 mb-xs-0">DAC-CXB</p>
+                                                                                          <div class="flight-info-table">
+                                                                                                <div class="i-row"><span class="i-label">Baggage:</span><span class="i-value">20KG / person</span></div>
+                                                                                          </div>
+                                                                                          </div>
+                                                                                    </div>
+                                                                              </div>
+                                                                        </div>
+                                                                     </div>
                                                                   </div>
-                                                            </div>
-                                                            <div class="MuiTypography-root MuiTypography-body1 TabPanel mui-style-uj1p52"
-                                                                  role="tabpanel" hidden="" id="simple-tabpanel-1"
-                                                                  aria-labelledby="simple-tab-1"></div>
                                                       </div>
                                                 </div>
                                           </div>
@@ -1492,13 +1484,13 @@
                                                       </div>
                                                 </div>
                                                 <div class="right">
-                                                      <div class="showMore"><span>Show More </span><i
+                                                      <div class="showMore"><a href="#details1" class="showmore text-primary" data-bs-toggle="collapse">Show More</a><i
                                                                   class="mdi mdi-chevron-down"></i></div>
                                                 </div>
                                           </div>
                                     </div>
                                     <div class="single-result-component Return">
-                                          <form method="post" action="{{ route('postStep2') }}">
+                                          <form method="post" action="{{ route('postStep2') }}" target="_blank">
                                           @csrf
                                           <div class="main-body">
                                                 <div class="left">
@@ -1620,8 +1612,8 @@
                                                       </div>
                                                 </div>
                                           </div>
-                                    </form>
-                                          <div id="collaseId2" class="collapse">
+                                          </form>
+                                          <div id="details2" class="collapse">
                                                 <div class="body-details">
                                                       <div class="segment-details">
                                                             <div>
@@ -1818,13 +1810,13 @@
                                                                   alt="" /><span>163</span></div>
                                                 </div>
                                                 <div class="right">
-                                                      <div class="showMore"><span>Show More </span><i
+                                                      <div class="showMore"><a href="#details2" class="showmore text-primary" data-bs-toggle="collapse">Show More</a><i
                                                                   class="mdi mdi-chevron-down"></i></div>
                                                 </div>
                                           </div>
                                     </div>
                                     <div class="single-result-component Return">
-                                          <form method="post" action="{{ route('postStep2') }}">
+                                          <form method="post" action="{{ route('postStep2') }}" target="_blank">
                                           @csrf
                                           <div class="main-body">
                                                 <div class="left">
@@ -1907,8 +1899,8 @@
                                                       </div>
                                                 </div>
                                           </div>
-                                    </form>
-                                          <div id="collaseId3" class="collapse">
+                                          </form>
+                                          <div id="details3" class="collapse">
                                                 <div class="body-details">
                                                       <div class="segment-details">
                                                             <div>
@@ -2107,13 +2099,13 @@
                                                                   alt="" /><span>151</span></div>
                                                 </div>
                                                 <div class="right">
-                                                      <div class="showMore"><span>Show More </span><i
+                                                      <div class="showMore"><a href="#details3" class="showmore text-primary" data-bs-toggle="collapse">Show More</a><i
                                                                   class="mdi mdi-chevron-down"></i></div>
                                                 </div>
                                           </div>
                                     </div>
                                     <div class="single-result-component Return">
-                                          <form method="post" action="{{ route('postStep2') }}">
+                                          <form method="post" action="{{ route('postStep2') }}" target="_blank">
                                           @csrf
                                           <div class="main-body">
                                                 <div class="left">
@@ -2194,8 +2186,8 @@
                                                       </div>
                                                 </div>
                                           </div>
-                                    </form>
-                                          <div id="collaseId4" class="collapse">
+                                          </form>
+                                          <div id="details4" class="collapse">
                                                 <div class="body-details">
                                                       <div class="segment-details">
                                                             <div>
@@ -2392,13 +2384,13 @@
                                                                   alt="" /><span>163</span></div>
                                                 </div>
                                                 <div class="right">
-                                                      <div class="showMore"><span>Show More </span><i
+                                                      <div class="showMore"><a href="#details4" class="showmore text-primary" data-bs-toggle="collapse">Show More</a><i
                                                                   class="mdi mdi-chevron-down"></i></div>
                                                 </div>
                                           </div>
                                     </div>
                                     <div class="single-result-component Return">
-                                          <form method="post" action="{{ route('postStep2') }}">
+                                          <form method="post" action="{{ route('postStep2') }}" target="_blank">
                                           @csrf
                                           <div class="main-body">
                                                 <div class="left">
@@ -2479,8 +2471,8 @@
                                                       </div>
                                                 </div>
                                           </div>
-                                    </form>
-                                          <div id="collaseId5" class="collapse">
+                                          </form>
+                                          <div id="details5" class="collapse">
                                                 <div class="body-details">
                                                       <div class="segment-details">
                                                             <div>
@@ -2677,13 +2669,13 @@
                                                                   alt="" /><span>163</span></div>
                                                 </div>
                                                 <div class="right">
-                                                      <div class="showMore"><span>Show More </span><i
+                                                      <div class="showMore"><a href="#details5" class="showmore text-primary" data-bs-toggle="collapse">Show More</a><i
                                                                   class="mdi mdi-chevron-down"></i></div>
                                                 </div>
                                           </div>
                                     </div>
                                     <div class="single-result-component Return">
-                                          <form method="post" action="{{ route('postStep2') }}">
+                                          <form method="post" action="{{ route('postStep2') }}" target="_blank">
                                           @csrf
                                           <div class="main-body">
                                                 <div class="left">
@@ -2764,8 +2756,8 @@
                                                       </div>
                                                 </div>
                                           </div>
-                                    </form>
-                                          <div id="collaseId6" class="collapse">
+                                          </form>
+                                          <div id="details6" class="collapse">
                                                 <div class="body-details">
                                                       <div class="segment-details">
                                                             <div>
@@ -2962,13 +2954,13 @@
                                                                   alt="" /><span>163</span></div>
                                                 </div>
                                                 <div class="right">
-                                                      <div class="showMore"><span>Show More </span><i
+                                                      <div class="showMore"><a href="#details6" class="showmore text-primary" data-bs-toggle="collapse">Show More</a><i
                                                                   class="mdi mdi-chevron-down"></i></div>
                                                 </div>
                                           </div>
                                     </div>
                                     <div class="single-result-component Return">
-                                          <form method="post" action="{{ route('postStep2') }}">
+                                          <form method="post" action="{{ route('postStep2') }}" target="_blank">
                                           @csrf
                                           <div class="main-body">
                                                 <div class="left">
@@ -3049,8 +3041,8 @@
                                                       </div>
                                                 </div>
                                           </div>
-                                    </form>
-                                          <div id="collaseId7" class="collapse">
+                                          </form>
+                                          <div id="details7" class="collapse">
                                                 <div class="body-details">
                                                       <div class="segment-details">
                                                             <div>
@@ -3247,13 +3239,13 @@
                                                                   alt="" /><span>163</span></div>
                                                 </div>
                                                 <div class="right">
-                                                      <div class="showMore"><span>Show More </span><i
+                                                      <div class="showMore"><a href="#details7" class="showmore text-primary" data-bs-toggle="collapse">Show More</a><i
                                                                   class="mdi mdi-chevron-down"></i></div>
                                                 </div>
                                           </div>
                                     </div>
                                     <div class="single-result-component Return">
-                                          <form method="post" action="{{ route('postStep2') }}">
+                                          <form method="post" action="{{ route('postStep2') }}" target="_blank">
                                           @csrf
                                           <div class="main-body">
                                                 <div class="left">
@@ -3337,7 +3329,7 @@
                                                 </div>
                                           </div>
                                     </form>
-                                          <div id="collaseId8" class="collapse">
+                                          <div id="details8" class="collapse">
                                                 <div class="body-details">
                                                       <div class="segment-details">
                                                             <div>
@@ -3536,13 +3528,13 @@
                                                                   alt="" /><span>138</span></div>
                                                 </div>
                                                 <div class="right">
-                                                      <div class="showMore"><span>Show More </span><i
+                                                      <div class="showMore"><a href="#details8" class="showmore text-primary" data-bs-toggle="collapse">Show More</a><i
                                                                   class="mdi mdi-chevron-down"></i></div>
                                                 </div>
                                           </div>
                                     </div>
                                     <div class="single-result-component Return">
-                                          <form method="post" action="{{ route('postStep2') }}">
+                                          <form method="post" action="{{ route('postStep2') }}" target="_blank">
                                           @csrf
                                           <div class="main-body">
                                                 <div class="left">
@@ -3625,8 +3617,8 @@
                                                       </div>
                                                 </div>
                                           </div>
-                                    </form>
-                                          <div id="collaseId9" class="collapse">
+                                          </form>
+                                          <div id="details9" class="collapse">
                                                 <div class="body-details">
                                                       <div class="segment-details">
                                                             <div>
@@ -3825,13 +3817,12 @@
                                                                   alt="" /><span>161</span></div>
                                                 </div>
                                                 <div class="right">
-                                                      <div class="showMore"><span>Show More </span><i
-                                                                  class="mdi mdi-chevron-down"></i></div>
+                                                <div class="showMore"><a href="#details9" class="text-primary" data-bs-toggle="collapse">Show More</a>
                                                 </div>
                                           </div>
                                     </div>
                                     <div class="single-result-component Return">
-                                          <form method="post" action="{{ route('postStep2') }}">
+                                          <form method="post" action="{{ route('postStep2') }}" target="_blank">
                                           @csrf
                                           <div class="main-body">
                                                 <div class="left">
@@ -3914,8 +3905,8 @@
                                                       </div>
                                                 </div>
                                           </div>
-                                    </form>
-                                          <div id="collaseId10" class="collapse">
+                                          </form>
+                                          <div id="details10" class="collapse">
                                                 <div class="body-details">
                                                       <div class="segment-details">
                                                             <div>
@@ -4113,7 +4104,7 @@
                                                                   alt="" /><span>163</span></div>
                                                 </div>
                                                 <div class="right">
-                                                      <div class="showMore"><span>Show More </span><i
+                                                      <div class="showMore"><a href="#details10" class="showmore text-primary" data-bs-toggle="collapse">Show More</a><i
                                                                   class="mdi mdi-chevron-down"></i></div>
                                                 </div>
                                           </div>

@@ -1,6 +1,13 @@
 @include('layout.frontend.header')
 
+
+
     <div class="container pb-5 pt-5 mt-5">
+        <div class="row">
+        
+        <div class="col-md-12">
+        <form method="post" action="{{ route('postStep3') }}">
+        @csrf
         <div class="row">
             <div class="col-lg-8 wrapper-np">
                 <div class="card">
@@ -245,48 +252,77 @@
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card passenger-contact-info">
                     <div class="titleDiv card-header"><h4>Passenger 1: (Primary Contact)</h4></div>
                     <div class="card-body">
-                        <form class="row g-3">
-                            <div class="col-md-6">
-                                <label for="inputEmail4" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="inputEmail4">
+                        <div class="row g-3">
+                            <div class="col-md-12">
+                                <select class="form-select" name="myself" aria-label="Default select example">
+                                    <option selected>Select One</option>
+                                    <option value="myself">MySelf</option>
+                                </select>
                             </div>
                             <div class="col-md-6">
-                                <label for="inputPassword4" class="form-label">Phone</label>
-                                <input type="number" class="form-control" id="inputPassword4">
+                                <label for="inputEmail4" class="form-label">Givel Name</label>
+                                <input type="text" class="form-control" id="inputEmail4" placeholder="Givel Name" required>
                             </div>
-                            <div class="col-12">
-                                <label for="inputAddress" class="form-label">Address</label>
-                                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                            <div class="col-md-6">
+                                <label for="inputPassword4" class="form-label">Sur Name</label>
+                                <input type="text" class="form-control" id="inputPassword4" placeholder="Sur Name" required>
                             </div>
-                            <div class="col-12">
-                                <label for="inputAddress2" class="form-label">Address 2</label>
-                                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <label for="inputEmail4" class="form-label col-md-2">Gender</label>
+                                    <div class="col-md-10 d-flex align-items-center">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                            <label class="form-check-label" for="flexRadioDefault1">
+                                                Male
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                            <label class="form-check-label" for="flexRadioDefault2">
+                                                Female
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputAddress" class="form-label">Nationality</label>
+                                <input type="text" class="form-control" id="inputAddress" placeholder="Bangladesh" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputAddress2" class="form-label">Date of Birth</label>
+                                <input type="date" class="form-control" id="inputAddress2" placeholder="06/22/2023" required>
                             </div>
                             <div class="col-md-6">
                                 <label for="inputCity" class="form-label">City</label>
-                                <input type="text" class="form-control" id="inputCity">
+                                <input type="text" class="form-control" id="inputCity" required placeholder="Dhaka">
                             </div>
-                            <div class="col-md-4">
-                                <label for="inputState" class="form-label">State</label>
-                                <input type="text" class="form-control" id="inputCity">
+                            <div class="col-md-6">
+                                <label for="inputZip" class="form-label">Zip Code</label>
+                                <input type="text" class="form-control" id="inputZip" required placeholder="1207">
                             </div>
-                            <div class="col-md-2">
-                                <label for="inputZip" class="form-label">Zip</label>
-                                <input type="text" class="form-control" id="inputZip">
+
+                            <div class="col-md-6">
+                                <label for="inputPassword4" class="form-label">Phone Number</label>
+                                <input type="number" class="form-control" id="inputPassword4" required placeholder="+8801700000000">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputEmail4" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="inputEmail4" required placeholder="example@gmail.com">
                             </div>
                             
-                        </form>
+                        </div>
                     </div>
                 </div>
 
             </div>
             
             <div class="col-lg-4">
-            <form method="post" action="{{ route('postStep3') }}">
-            @csrf
+            
                 <div class="sticky-np">
                     <div class="PaymentSideBarWidget cart-details">
                         <div class="WidgetPanel">
@@ -401,12 +437,17 @@
                         type="submit">
                         Pay now
                     </button>
-                    </form>
                 </div>
             
             </div>
         </div>
+        </form>
+        </div>
+        </div>
+        
+        
     </div>
+
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {

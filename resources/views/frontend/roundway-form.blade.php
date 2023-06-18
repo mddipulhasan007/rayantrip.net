@@ -2,7 +2,7 @@
     @csrf
     <ul class="one-round-sec">
             <li class="from-fly">
-                <label for="from_city">From</label>
+                <label for="from_city"> Flying from</label>
                 <input class="form-control" id="from_city"
                         type="text" value="Dhaka"
                         name="from_city" required />
@@ -12,7 +12,8 @@
                         name="from_city_short_apt_name" required />
             </li>
             <li class="to-fly">
-                <label for="to_city">To</label>
+            <i class="fa-solid fa-arrow-right-arrow-left exchange-icon"></i>
+                <label for="to_city">Flying to</label>
                 <input class="form-control" id="to_city"
                         type="text" value="Cox's Bazar"
                         name="to_city" required />
@@ -22,33 +23,34 @@
                         name="to_city_short_apt_name" required />
             </li>
             <li class="departure-fly">
-                <label for="from">Departure</label>
+                <label for="from">Depart on</label>
                 <input type="text" class="form-control"
                         id="from" name="dept_date_from"
                         value="11 Jun 2023, Saturday"
                         placeholder="11 Jun 2023, Saturday" required>
             </li>
             <li class="return-fly">
-                <label for="to">Return</label>
+                <label for="to">Return on</label>
                 <input type="text" class="form-control" id="to"
                         name="return_date_to"
                         value="12 Jun 2023, Sunday"
                         placeholder="12 Jun 2023, Sunday">
+                <span class="return-blank d-none">Tap to add a return date for bigger discounts</span>
             </li>
             <li class="travel-class-fly">
                 <label for="trav_count">Travellers &
                         Class</label>
                 <div
-                        class="d-flex align-items-center gap-2 trav-sec">
+                        class="d-flex align-items-center gap-20 trav-sec">
                         <input type="text"
                             class="form-control trav_count"
                             id="trav_count" name="trav_count"
-                            value="1" required readonly> Traveller
+                            value="1" required readonly> Person
                 </div>
                 
                 <input type="text" class="form-control"
-                        id="trav_class"
-                        value="First Class" readonly>
+                        id="trav_class" name="fare_type"
+                        value="Economy Class" readonly>
 
                 <div
                         class="travelllers-class-select-popup d-none">
@@ -119,41 +121,7 @@
                 </div>
             </li>
     </ul>
-    <div class="filter-bottom-select-fare-type">
-            <h4 class="select-type-title">Select A Fare Type:</h4>
-            <div class="bottom-check-option">
-                <div class="form-check">
-                        <input class="form-check-input"
-                            type="radio" name="fare_type"
-                            id="regular_fares1"
-                            value="Regular Fares 1" checked required>
-                        <label class="form-check-label"
-                            for="regular_fares1">
-                            Regular Fares 1
-                        </label>
-                </div>
-                <div class="form-check">
-                        <input class="form-check-input"
-                            type="radio" name="fare_type"
-                            id="armed_forces_fares"
-                            value="Armed Forces Fares 2" required>
-                        <label class="form-check-label"
-                            for="armed_forces_fares">
-                            Armed Forces Fares 2
-                        </label>
-                </div>
-                <div class="form-check">
-                        <input class="form-check-input"
-                            type="radio" name="fare_type"
-                            id="student_fares2"
-                            value="Student Fares 2" required>
-                        <label class="form-check-label"
-                            for="student_fares2">
-                            Student Fares 2
-                        </label>
-                </div>
-            </div>
-    </div>
+    
     <div class="bottom-search-main">
         <button type="submit"
             class="btn btn-primary filter-main-search">Search</button>

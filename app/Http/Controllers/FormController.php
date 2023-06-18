@@ -18,14 +18,9 @@ class FormController extends Controller
     //     return view('frontend/flights-search');
     // }
 
-    public function hotel()
+    public function tours()
     {
-        return view('frontend/hotel');
-    }
-
-    public function visa()
-    {
-        return view('frontend/visa');
+        return view('frontend/tours');
     }
 
     public function chartered()
@@ -52,6 +47,7 @@ class FormController extends Controller
             'to_city_short_apt_name' => 'required',
             'dept_date_from' => 'required',
             'trav_count' => 'required',
+            'return_date_to' => '',
             'fare_type' => 'required',
         ]);
 

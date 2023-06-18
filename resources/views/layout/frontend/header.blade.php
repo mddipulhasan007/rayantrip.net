@@ -22,6 +22,7 @@
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true" />
 
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+      <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css'>
 
       <link rel="stylesheet" href="{{ asset('assets/static/css/custom.css') }}">
 
@@ -54,44 +55,65 @@
                         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                         <a href="#">Flight</a>
                         <a href="#">Hotel</a>
-                        <a href="#">Charter Flight</a>
-                        <a href="#">Activities</a>
-                        <a href="#">Holiday Package</a>
+                        <a href="#">Tours</a>
+                        <a href="#">Visa</a>
+                        <a href="#">Promotions</a>
                   </div>
 
                   <div class="navbar-collapse" id="navbarNavAltMarkup">
-                        <div class="navbar-item d-flex flex-column flex-xl-row">
+                        <div class="navbar-item d-flex flex-column flex-xl-row desk-menu">
                               <ul class="navbar-nav">
                                     <li class="nav-item">
-                                          <a class="nav-link d-flex align-items-center" href="/flight">
-                                                <img src="./assets/images/icons/upper-offer.png" alt="...">
+                                          <a class="nav-link d-flex align-items-center" href="{{ route('index') }}">
                                                 <div class="menu-right-sec">
-                                                      <span class="big-font">SuperOffers</span>
-                                                      <p class="small-font">
+                                                      <span class="big-font">Flight</span>
+                                                      <!-- <p class="small-font">
                                                             Explore great deals & offers
-                                                      </p>
+                                                      </p> -->
                                                 </div>
                                           </a>
                                     </li>
                                     <li class="nav-item">
-                                          <a class="nav-link d-flex align-items-center" href="/hotel">
-                                                <img src="./assets/images/icons/gift-card.png" alt="...">
+                                          <a class="nav-link d-flex align-items-center" href="{{ route('hotel') }}">
+                                                
                                                 <div class="menu-right-sec">
-                                                      <span class="big-font">Gift Cards</span>
-                                                      <p class="small-font">
+                                                      <span class="big-font">Hotel</span>
+                                                      <!-- <p class="small-font">
                                                             Travels Gift Card
-                                                      </p>
+                                                      </p> -->
                                                 </div>
                                           </a>
                                     </li>
                                     <li class="nav-item">
-                                          <a class="nav-link d-flex align-items-center" href="/hotel">
-                                                <img src="./assets/images/icons/rayan-trip.png" alt="...">
+                                          <a class="nav-link d-flex align-items-center" href="{{ route('tours') }}">
+                                                
                                                 <div class="menu-right-sec">
-                                                      <span>Rayan Trips</span>
-                                                      <p class="small-font">
+                                                      <span class="big-font">Tours</span>
+                                                      <!-- <p class="small-font">
                                                             Manage your bookings
-                                                      </p>
+                                                      </p> -->
+                                                </div>
+                                          </a>
+                                    </li>
+                                    <li class="nav-item">
+                                          <a class="nav-link d-flex align-items-center" href="{{ route('visa') }}">
+                                                
+                                                <div class="menu-right-sec">
+                                                      <span class="big-font">Visa</span>
+                                                      <!-- <p class="small-font">
+                                                            Manage your bookings
+                                                      </p> -->
+                                                </div>
+                                          </a>
+                                    </li>
+                                    <li class="nav-item">
+                                          <a class="nav-link d-flex align-items-center" href="/">
+                                                
+                                                <div class="menu-right-sec">
+                                                      <span class="big-font">Promotions</span>
+                                                      <!-- <p class="small-font">
+                                                            Manage your bookings
+                                                      </p> -->
                                                 </div>
                                           </a>
                                     </li>
@@ -99,7 +121,9 @@
                               <div class="select-carrency d-flex align-items-center">
                                     <div class="full-currency-sction">
                                           <div class="selected-curr">
-                                                <img src="./assets/images/icons/bd-flag.png" alt="...">
+                                                <img class="currency bdt-carrency" src="./assets/images/icons/bd-flag.png" alt="...">
+                                                <img class="currency aed-carrency d-none" src="./assets/images/icons/uae-flag.png" alt="...">
+                                                <img class="currency usd-carrency d-none" src="./assets/images/icons/usa-flag.png" alt="...">
                                                 <span>
                                                       <span class="currency bdt-carrency">BDT</span>
                                                       <span class="currency aed-carrency d-none">AED</span>
@@ -125,7 +149,7 @@
                                                                   </span>
                                                                   <span class="region-list region-list-aed">
                                                                         <span class="left-side">
-                                                                              <img src="./assets/images/icons/bd-flag.png"
+                                                                              <img src="./assets/images/icons/uae-flag.png"
                                                                                     alt="...">
                                                                               Arab Emirates
                                                                         </span>
@@ -136,7 +160,7 @@
                                                                   </span>
                                                                   <span class="region-list region-list-usd">
                                                                         <span class="left-side">
-                                                                              <img src="./assets/images/icons/bd-flag.png"
+                                                                              <img src="./assets/images/icons/usa-flag.png"
                                                                                     alt="...">
                                                                               United State
                                                                         </span>

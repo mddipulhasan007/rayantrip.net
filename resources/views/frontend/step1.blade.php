@@ -39,7 +39,7 @@
                 <label for="trav_count">Travellers &
                         Class</label>
                 <div
-                        class="d-flex align-items-center gap-2 trav-sec">
+                        class="d-flex align-items-center gap-0 trav-sec">
                         <input type="text"
                             class="form-control trav_count"
                             id="trav_count" name="trav_count"
