@@ -85,7 +85,7 @@
                                           </a>
                                     </li>
                                     <li class="nav-item">
-                                          <a class="nav-link d-flex align-items-center" href="{{ route('tours') }}">
+                                          <a class="nav-link d-flex align-items-center" href="{{ route('index') }}">
                                                 
                                                 <div class="menu-right-sec">
                                                       <span class="big-font">Tours</span>
@@ -189,13 +189,31 @@
                                                 </div>
                                           </form>
                                     </div>
+                                   
+                                    @guest
                                     <ul class="profile-section">
                                           <li class="nav-item">
-                                                <a class="nav-link" href="sign-in.html">
+                                                <a class="nav-link" href="{{ route('login') }}">
                                                       Sign In
                                                 </a>
                                           </li>
                                     </ul>
+                                    @else
+
+                                    <div class="dropdown logged-profile">
+                                          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                             <i class="fa-solid fa-user"></i> <span class="truncate"> {{$user_name}} </span>
+                                          </button>
+                                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <li><a class="dropdown-item" href="#">My Profile</a></li>
+                                                <li><a class="dropdown-item" href="#">My Booking</a></li>
+                                                <li><a class="dropdown-item" href="{{ route('logout') }}">Logout</a></li>
+                                          </ul>
+                                    </div>
+                                         
+                                    @endguest
+
+                                   
                               </div>
                         </div>
                   </div>

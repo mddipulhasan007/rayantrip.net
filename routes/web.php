@@ -53,6 +53,8 @@ Route::post('/step2', [FormController::class, 'postStep2'])->name('postStep2');
 Route::get('/step3', [FormController::class, 'step3'])->name('step3');
 Route::post('/step3', [FormController::class, 'postStep3'])->name('postStep3');
 
+Route::get('/signin', [FormController::class, 'signin'])->name('signin');
+Route::get('/signup', [FormController::class, 'signup'])->name('signup');
 Route::get('/tours', [FormController::class, 'tours'])->name('tours');
 Route::get('/chartered', [FormController::class, 'chartered'])->name('chartered');
 Route::get('/activities', [FormController::class, 'activities'])->name('activities');

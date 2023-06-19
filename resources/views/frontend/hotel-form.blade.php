@@ -35,7 +35,7 @@
                             value="2" required readonly> Guest
                 </div>
                 
-                <select class="form-select w-50" name="room_count" aria-label="Default select example">
+                <select class="form-select w-50 room-count" name="room_count" aria-label="Default select example">
                         <option value="1" selected>1 Room</option>
                         <option value="2">2 Room</option>
                         <option value="3">3 Room</option>
@@ -43,12 +43,12 @@
                 </select>
 
                 <div
-                        class="travelllers-class-select-popup d-none">
+                        class="hotel-popup travelllers-class-select-popup d-none">
                         <div class="close-popup">
                             <i
                                     class="fa-solid fa-circle-xmark close-popup-btn"></i>
                         </div>
-                        <div class="travelllers-class-select-1">
+                        <div class="tvl-count travelllers-class-select-1">
                             <span class="pcount">Adults</span>
                             <button type='button'
                                     class='btn btn-danger btn-sm '
@@ -67,7 +67,7 @@
                                     onmouseup='clearAll()'
                                     onmouseleave='clearAll()'>+</button>
                         </div>
-                        <div class="travelllers-class-select-2">
+                        <div class="tvl-count travelllers-class-select-2">
                         <span class="pcount">Childs(0-10 yr)</span>
                             <button type='button'
                                     class='btn btn-danger btn-sm signBut'
@@ -87,7 +87,7 @@
                                     onmouseleave='clearAll()'>+
                             </button>
                         </div>
-                        <div class="travelllers-class-select-3">
+                        <div class="tvl-count travelllers-class-select-3">
                         <span class="pcount">Childs(0-5 yr)</span>
                             <button type='button'
                                     class='btn btn-danger btn-sm signBut'

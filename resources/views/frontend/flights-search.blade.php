@@ -1484,8 +1484,8 @@
                                                       </div>
                                                 </div>
                                                 <div class="right">
-                                                      <div class="showMore"><a href="#details1" class="showmore text-primary" data-bs-toggle="collapse">Show More</a><i
-                                                                  class="mdi mdi-chevron-down"></i></div>
+                                                      <div class="showMore"><a href="#details1" class="showmore text-primary" data-bs-toggle="collapse"><span class="show-more">Show More</span> <span class="show-less d-none">Show Less</span> <i
+                                                                  class="mdi mdi-chevron-down"></i></a></div>
                                                 </div>
                                           </div>
                                     </div>

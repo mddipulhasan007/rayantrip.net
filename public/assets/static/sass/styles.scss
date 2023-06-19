@@ -872,6 +872,10 @@ body {
                                         position: relative;
                                         padding: 0px 30px;
 
+                                        @media (max-width:575px) {
+                                            padding: 0px 22px;
+                                        }
+
                                         &::after {
                                             position: absolute;
                                             content: "";
@@ -996,7 +1000,18 @@ body {
                                 width: 50% !important;
                                 height: 85px;
                                 padding: 5px 10px;
+                            }
 
+                            &:nth-child(2) {
+                                @media (max-width:575px) {
+                                    border-right: 1px solid #ddd !important;
+                                }
+                            }
+
+                            &:nth-child(4) {
+                                @media (max-width:575px) {
+                                    border-right: 1px solid #ddd !important;
+                                }
                             }
 
                             &:hover {
@@ -1017,6 +1032,10 @@ body {
                                 font-size: 21px;
                                 font-weight: 600;
 
+                                @media (max-width:380px) {
+                                    font-size: 17px;
+                                }
+
                                 .trav_count {
                                     width: 23px !important;
                                     padding-right: 0px !important;
@@ -1034,6 +1053,16 @@ body {
                                 line-height: 17px;
                                 color: #333;
                                 cursor: pointer;
+
+                                @media (max-width:380px) {
+                                    font-size: 13px;
+                                    line-height: 15x;
+                                }
+
+                                @media (max-width:360px) {
+                                    font-size: 12px;
+                                    line-height: 14x;
+                                }
                             }
 
                             input {
@@ -1048,9 +1077,17 @@ body {
                                     font-weight: 400;
                                     cursor: pointer;
 
+                                    @media (max-width:380px) {
+                                        font-size: 14px;
+                                    }
+
                                     &.hasDatepicker {
                                         font-size: 18px !important;
                                         font-weight: 600 !important;
+
+                                        @media (max-width:380px) {
+                                            font-size: 17px !important;
+                                        }
                                     }
 
                                     &:focus {
@@ -1093,8 +1130,13 @@ body {
                                     font-size: 21px;
                                     font-weight: 600;
 
+
                                     @media (max-width:575px) {
                                         font-size: 20px;
+                                    }
+
+                                    @media (max-width:380px) {
+                                        font-size: 17px;
                                     }
                                 }
 
@@ -1609,6 +1651,49 @@ body {
                                 width: 20%;
                                 position: relative;
 
+                                &.visa-travel-count {
+
+                                    .visa_trav_count_main {
+                                        display: flex;
+                                        align-items: center;
+                                        gap: 0.5rem;
+
+                                        input {
+                                            width: 70px;
+                                            padding: 1px 0px;
+                                            border: 0px;
+                                            background-color: transparent;
+                                            font-weight: 700;
+                                            font-size: 18px;
+                                        }
+
+                                        button {
+                                            width: 30px !important;
+                                            border: 1px solid #333;
+                                            border-radius: 10px;
+                                            height: 30px;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            font-size: 30px;
+                                            color: #000;
+                                            padding: 2px 5px 7px;
+                                            line-height: 15px;
+
+                                            &:hover {
+                                                background-color: #05315c;
+                                                color: #fff;
+                                            }
+
+                                            &:focus {
+                                                background-color: #05315c;
+                                                color: #fff;
+                                            }
+                                        }
+                                    }
+
+                                }
+
                                 .travelllers-class-select-popup {
                                     width: 400px;
                                     height: 260px;
@@ -1623,6 +1708,10 @@ body {
                                     left: 0px;
                                     background: #fff;
                                     border-radius: 20px;
+
+                                    @media (max-width:575px) {
+                                        width: 290px;
+                                    }
 
                                     .close-popup {
                                         width: 100%;
@@ -1674,6 +1763,9 @@ body {
                                     button {
                                         &.apply-btn {
                                             margin-top: 20px;
+                                            margin-top: 20px;
+                                            padding: 5px 30px;
+                                            border-radius: 10px;
                                         }
                                     }
 
@@ -1730,6 +1822,20 @@ body {
                                             border-radius: 4px;
                                         }
                                     }
+
+                                    &.hotel-popup {
+                                        @media (max-width:575px) {
+                                            left: -127px !important;
+                                        }
+
+                                        .tvl-count {
+                                            span {
+                                                &.pcount {
+                                                    width: 130px;
+                                                }
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -1740,12 +1846,28 @@ body {
                     display: flex;
                     align-items: center;
                     gap: 1.5rem;
+                    min-height: 40px;
+                    margin-bottom: 22px;
+
+                    @media (max-width:575px) {
+                        flex-wrap: wrap;
+                    }
+
+
 
                     h4 {
                         font-size: 16px;
                         font-weight: 700;
                         line-height: 27px;
                         color: #333;
+
+                        @media (max-width:575px) {
+                            line-height: 15px;
+                            width: 100%;
+                            padding-top: 20px;
+                        }
+
+
                     }
 
                     .form-check {
@@ -1852,7 +1974,7 @@ a {
         position: absolute;
         top: 13px;
         left: 100px;
-        content: "Select Flight date";
+        content: "Select Your date";
         color: #333;
         font-size: 16px;
         font-weight: 600;
@@ -1944,5 +2066,146 @@ a {
         input[type=checkbox] {
             display: block !important;
         }
+
+        .custom-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
     }
+
+    h6 {
+        &.title {
+            padding-left: 0px !important;
+        }
+    }
+}
+
+.showmore {
+    display: flex;
+}
+
+.TabPanelInner {
+    padding-top: 20px;
+}
+
+.card-body {
+    .hotel {
+        h5 {
+            &.filterReset {
+                padding-left: 0px;
+                padding-right: 0px;
+            }
+        }
+    }
+}
+
+
+select {
+    &.room-count {
+        background-color: transparent;
+        border: 0px;
+        outline: none;
+        box-shadow: none;
+
+        &:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+        padding-left: 1px;
+    }
+}
+
+.nationality {
+    select {
+        &.countries-select {
+            background-color: transparent !important;
+            border: 0px !important;
+            outline: none;
+            box-shadow: none;
+
+            &:focus {
+                outline: none;
+                box-shadow: none;
+            }
+        }
+    }
+}
+
+
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #333;
+    line-height: 26px;
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 1px;
+}
+
+.select2-container--default .select2-selection--single {
+    background-color: transparent;
+    border: 0px;
+}
+
+.tripCoinDetails {
+    display: flex;
+
+    .item {
+        .img {
+            display: none;
+        }
+    }
+}
+
+.requiredDocs {
+    h4 {
+        margin-top: 20px;
+    }
+
+    .visaType {
+        margin-top: 20px;
+    }
+}
+
+.visa-option {
+    margin-bottom: 25px;
+}
+
+.mb-60px {
+    margin-bottom: 60px;
+}
+
+.logged-profile {
+
+    button {
+        display: flex;
+        align-items: center;
+        background-color: #05315c;
+        border-color: #05315c;
+        padding: 9px 7px;
+        gap: 0.5rem;
+        outline: none;
+
+        &:focus {
+            background-color: #1380c3;
+            box-shadow: none;
+            outline: none;
+            border-color: #1380c3;
+        }
+
+        span {
+            font-size: 14px;
+            font-weight: 500;
+
+            &.truncate {
+                width: 60px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: block;
+            }
+        }
+    }
+
 }

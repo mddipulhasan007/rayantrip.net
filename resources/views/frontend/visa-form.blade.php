@@ -1,9 +1,9 @@
 <form method="post" action="{{ route('postStepvisa1') }}">
     @csrf
-    <ul class="one-round-sec">
+    <ul class="one-round-sec mb-60px">
             <li class="from-fly" style="width:28%;">
             <label for="countries" class="lead">Country</label>
-            <select class="form-control" id="countries" name="country">    
+            <select class="form-control countries-select" id="countries" name="country">    
                 <option value="AF" data-capital="Kabul">Afghanistan</option>
                 <option value="AX" data-capital="Mariehamn">Aland Islands</option>
                 <option value="AL" data-capital="Tirana">Albania</option>
@@ -238,23 +238,23 @@
                 <option value="ZW" data-capital="Harare">Zimbabwe</option>
             </select>
             </li>
-            <li class="departure-fly" style="width:18%;">
+            <li class="departure-fly" style="width:15%;">
                 <label for="from">Date of Entry</label>
                 <input type="text" class="form-control"
                         id="from" name="entry_date_from"
                         value="20 Jun 2023"
                         placeholder="20 Jun 2023" required>
             </li>
-            <li class="return-fly" style="width:18%;">
+            <li class="return-fly" style="width:15%;">
                 <label for="to">Date of Exit</label>
                 <input type="text" class="form-control" id="to"
                         name="exit_date_to"
                         value="22 Jun 2023"
                         placeholder="22 Jun 2023">
             </li>
-            <li class="nationality" style="width:18%;">
+            <li class="nationality" style="width:24%;">
             <label for="countries_nat" class="lead">Nationality</label>
-            <select class="form-control" id="countries_nat" name="nationality">    
+            <select class="form-control countries-select" id="countries_nat" name="nationality">    
                 <option value="AF" data-capital="Kabul">Afghanistan</option>
                 <option value="AX" data-capital="Mariehamn">Aland Islands</option>
                 <option value="AL" data-capital="Tirana">Albania</option>
@@ -489,24 +489,26 @@
                 <option value="ZW" data-capital="Harare">Zimbabwe</option>
             </select>
             </li>
-            <li class="travel-class-fly" style="width:18%;">
+            <li class="travel-class-fly visa-travel-count" style="width:18%;">
                 <label for="trav_count">Traveller</label>
-                <button type='button'
-                        class='btn btn-danger btn-sm '
-                        id='mbA'
-                        onmousedown='modIn(this)'
-                        onmouseup='clearAll()'
-                        onmouseleave='clearAll()'>-</button>
-                <input type='number' id='A'
-                        onchange='imposeMinMax(this)'
-                        value='1' max='10' min='1'
-                        step='1' name="visa_trav_count" />
-                <button type='button'
-                        class='btn btn-danger btn-sm '
-                        id='pbA'
-                        onmousedown='modIn(this)'
-                        onmouseup='clearAll()'
-                        onmouseleave='clearAll()'>+</button>
+                <div class="visa_trav_count_main">
+                        <input type='number' id='A'
+                                onchange='imposeMinMax(this)'
+                                value='1' max='10' min='1'
+                                step='1' name="visa_trav_count" />
+                        <button type='button'
+                                class='btn btn-default btn-sm '
+                                id='mbA'
+                                onmousedown='modIn(this)'
+                                onmouseup='clearAll()'
+                                onmouseleave='clearAll()'>-</button>
+                        <button type='button'
+                                class='btn btn-default btn-sm '
+                                id='pbA'
+                                onmousedown='modIn(this)'
+                                onmouseup='clearAll()'
+                                onmouseleave='clearAll()'>+</button>
+                </div>
             </li>
         </ul>
         <div class="bottom-search-main">

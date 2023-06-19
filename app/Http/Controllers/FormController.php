@@ -4,6 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use DB;
+use Hash;
+use Session;
+use App\Models\User;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
+
 use App\Models\FormData; // Assuming you have a model named FormData
 
 class FormController extends Controller
@@ -17,6 +24,16 @@ class FormController extends Controller
     // {
     //     return view('frontend/flights-search');
     // }
+
+    public function signin()
+    {
+        return view('frontend/sign-in');
+    }
+
+    public function signup()
+    {
+        return view('frontend/sign-up');
+    }
 
     public function tours()
     {
@@ -35,6 +52,16 @@ class FormController extends Controller
 
     public function index()
     {
+
+        //return view('frontend/index');
+        if(Auth::check())
+        {
+            $user_id = Auth::user()->id;
+            $user_name = Auth::user()->name;
+            $user_email = Auth::user()->email;
+            $user_password = Auth::user()->password;
+            return view('frontend/index', compact('user_id', 'user_name', 'user_email', 'user_password'));
+        }
         return view('frontend/index');
     }
 
@@ -60,7 +87,19 @@ class FormController extends Controller
     {
         $step1Data = $request->session()->get('index');
 
+        //return view('frontend/flights-search');
+
+        if(Auth::check())
+        {
+            $user_id = Auth::user()->id;
+            $user_name = Auth::user()->name;
+            $user_email = Auth::user()->email;
+            $user_password = Auth::user()->password;
+            return view('frontend/flights-search', compact('step1Data', 'user_id', 'user_name', 'user_email', 'user_password'));
+        }
         return view('frontend/flights-search', compact('step1Data'));
+
+        //return view('frontend/flights-search', compact('step1Data'));
     }
 
     public function postStep2(Request $request)
@@ -79,7 +118,14 @@ class FormController extends Controller
         $step1Data = $request->session()->get('index');
         $step2Data = $request->session()->get('step2');
 
-        return view('frontend/flights-payment', compact('step1Data', 'step2Data'));
+        if(Auth::check())
+        {
+            $user_name = Auth::user()->name;
+            return view('frontend/flights-payment', compact('step1Data', 'step2Data', 'user_name'));
+        }
+        return redirect('login')->with('success', 'you are not allowed to access');
+
+        //return view('frontend/flights-payment', compact('step1Data', 'step2Data'));
     }
 
     public function postStep3(Request $request)
@@ -103,6 +149,12 @@ class FormController extends Controller
     }
 
     public function success(){
-        return view('frontend/success');
+        //return view('frontend/success');
+        if(Auth::check())
+        {
+            $user_name = Auth::user()->name;
+            return view('frontend/success', compact('user_name'));
+        }
+        return redirect('login')->with('success', 'you are not allowed to access');
     }
 }

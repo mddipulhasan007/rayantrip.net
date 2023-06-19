@@ -4,6 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use DB;
+use Hash;
+use Session;
+use App\Models\User;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
+
 use App\Models\FormData; // Assuming you have a model named FormData
 
 class VisaController extends Controller
@@ -11,7 +18,17 @@ class VisaController extends Controller
 
     public function visa()
     {
+        //return view('frontend/visa');
+        if(Auth::check())
+        {
+            $user_id = Auth::user()->id;
+            $user_name = Auth::user()->name;
+            $user_email = Auth::user()->email;
+            $user_password = Auth::user()->password;
+            return view('frontend/visa', compact('user_id', 'user_name', 'user_email', 'user_password'));
+        }
         return view('frontend/visa');
+        //return redirect('login')->with('success', 'you are not allowed to access');
     }
 
     public function visasearch()
@@ -37,6 +54,16 @@ class VisaController extends Controller
     {
         $stepvisa1Data = $request->session()->get('visa');
 
+        if(Auth::check())
+        {
+            $user_id = Auth::user()->id;
+            $user_name = Auth::user()->name;
+            $user_email = Auth::user()->email;
+            $user_password = Auth::user()->password;
+            return view('frontend/visa-search', compact('stepvisa1Data', 'user_id', 'user_name', 'user_email', 'user_password'));
+        }
+        //return redirect('login')->with('success', 'you are not allowed to access');
+
         return view('frontend/visa-search', compact('stepvisa1Data'));
     }
 
@@ -56,7 +83,17 @@ class VisaController extends Controller
         $stepvisa1Data = $request->session()->get('visa');
         $stepvisa2Data = $request->session()->get('stepvisa2');
 
-        return view('frontend/flights-payment-visa', compact('stepvisa1Data', 'stepvisa2Data'));
+        if(Auth::check())
+        {
+            $user_id = Auth::user()->id;
+            $user_name = Auth::user()->name;
+            $user_email = Auth::user()->email;
+            $user_password = Auth::user()->password;
+            return view('frontend/flights-payment-visa', compact('stepvisa1Data', 'stepvisa2Data', 'user_id', 'user_name', 'user_email', 'user_password'));
+        }
+        return redirect('login')->with('success', 'you are not allowed to access');
+
+        //return view('frontend/flights-payment-visa', compact('stepvisa1Data', 'stepvisa2Data'));
     }
 
     public function postStepvisa3(Request $request)
@@ -80,6 +117,15 @@ class VisaController extends Controller
     }
 
     public function visasuccess(){
-        return view('frontend/visa-success');
+        //return view('frontend/visa-success');
+        if(Auth::check())
+        {
+            $user_id = Auth::user()->id;
+            $user_name = Auth::user()->name;
+            $user_email = Auth::user()->email;
+            $user_password = Auth::user()->password;
+            return view('frontend/visa-success', compact('user_id', 'user_name', 'user_email', 'user_password'));
+        }
+        return redirect('login')->with('success', 'you are not allowed to access');
     }
 }

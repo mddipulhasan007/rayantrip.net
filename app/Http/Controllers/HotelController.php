@@ -4,6 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use DB;
+use Hash;
+use Session;
+use App\Models\User;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
+
 use App\Models\FormData; // Assuming you have a model named FormData
 
 class HotelController extends Controller
@@ -11,6 +18,15 @@ class HotelController extends Controller
 
     public function hotel()
     {
+        //return view('frontend/hotel');
+        if(Auth::check())
+        {
+            $user_id = Auth::user()->id;
+            $user_name = Auth::user()->name;
+            $user_email = Auth::user()->email;
+            $user_password = Auth::user()->password;
+            return view('frontend/hotel', compact('user_id', 'user_name', 'user_email', 'user_password'));
+        }
         return view('frontend/hotel');
     }
 
@@ -38,6 +54,16 @@ class HotelController extends Controller
     {
         $stephotel1Data = $request->session()->get('hotel');
 
+        if(Auth::check())
+        {
+            $user_id = Auth::user()->id;
+            $user_name = Auth::user()->name;
+            $user_email = Auth::user()->email;
+            $user_password = Auth::user()->password;
+            return view('frontend/hotel-search', compact('stephotel1Data', 'user_id', 'user_name', 'user_email', 'user_password'));
+        }
+        // return view('frontend/hotel');
+
         return view('frontend/hotel-search', compact('stephotel1Data'));
     }
 
@@ -57,7 +83,17 @@ class HotelController extends Controller
         $stephotel1Data = $request->session()->get('hotel');
         $stephotel2Data = $request->session()->get('stephotel2');
 
-        return view('frontend/flights-payment-hotel', compact('stephotel1Data', 'stephotel2Data'));
+        if(Auth::check())
+        {
+            $user_id = Auth::user()->id;
+            $user_name = Auth::user()->name;
+            $user_email = Auth::user()->email;
+            $user_password = Auth::user()->password;
+            return view('frontend/flights-payment-hotel', compact('stephotel1Data', 'stephotel2Data', 'user_id', 'user_name', 'user_email', 'user_password'));
+        }
+        return redirect('login')->with('success', 'you are not allowed to access');
+
+        //return view('frontend/flights-payment-hotel', compact('stephotel1Data', 'stephotel2Data'));
     }
 
     public function postStephotel3(Request $request)
@@ -81,6 +117,15 @@ class HotelController extends Controller
     }
 
     public function hotelsuccess(){
-        return view('frontend/hotel-success');
+        //return view('frontend/hotel-success');
+        if(Auth::check())
+        {
+            $user_id = Auth::user()->id;
+            $user_name = Auth::user()->name;
+            $user_email = Auth::user()->email;
+            $user_password = Auth::user()->password;
+            return view('frontend/hotel-success', compact('user_id', 'user_name', 'user_email', 'user_password'));
+        }
+        return redirect('login')->with('success', 'you are not allowed to access');
     }
 }

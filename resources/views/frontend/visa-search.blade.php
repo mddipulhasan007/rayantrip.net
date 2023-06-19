@@ -23,8 +23,8 @@
                 <h1>Tourist Visa Only</h1>
                 <ul>
                     <li>Visa Required</li>
-                    <li><i class="mdi mdi-currency-sign"></i> <span>Currency <strong>SGD</strong></span></li>
-                    <li><i class="mdi mdi-clock-time-four"></i> <span>Local Time <strong>GMT + 8</strong></span></li>
+                    <li><i class="mdi mdi-currency-sign"></i> <span>Currency <strong>INR</strong></span></li>
+                    <li><i class="mdi mdi-clock-time-four"></i> <span>Local Time <strong>GMT + 5</strong></span></li>
                 </ul>
             </div>
             <div class="tripCoinDetails ">
@@ -44,7 +44,7 @@
             <div class="text-content">
                 <div class="doccontentlist">
                     <div class="requiredDocs">
-                        <h4 class="fw-500">Required Documents for Singapore Visa without LOI</h4>
+                        <h4 class="fw-500">Required Documents for India Visa without LOI</h4>
                         <div class="visaType">
                             <h5 class="fw-500">Job Holder: </h5>
                             <ul>
@@ -107,7 +107,7 @@
                         </div>
                     </div>
                     <div class="requiredDocs">
-                        <h4 class="fw-500">Required Documents for Singapore Visa with LOI</h4>
+                        <h4 class="fw-500">Required Documents for India Visa with LOI</h4>
                         <div class="visaType">
                             <h5 class="fw-500">Job Holder: </h5>
                             <ul>
@@ -261,7 +261,7 @@
                 <form method="post" action="{{ route('postStepvisa2') }}">
                 @csrf
                 <div class="top">
-                    <h5>Singapore Visa without LOI Type:E-Visa </h5>
+                    <h5>India Visa without LOI Type:E-Visa </h5>
                     <div class="d-flex">
                         <div class="desc"><span>Validity</span>
                             <p>60 Days</p>
@@ -277,7 +277,7 @@
                 </div>
 
                 <div class="btn-cont">
-                    <input type="hidden" name="package" value="Singapore Visa without LOI Type:E-Visa" required>
+                    <input type="hidden" name="package" value="India Visa without LOI Type:E-Visa" required>
                     <button class="btn btn-primary" type="submit">
                         Select Offer
                     </button>
@@ -288,7 +288,7 @@
                 <form method="post" action="{{ route('postStepvisa2') }}">
                 @csrf
                 <div class="top">
-                    <h5>Singapore Visa with LOI Type:E-Visa </h5>
+                    <h5>India Visa with LOI Type:E-Visa </h5>
                     <div class="d-flex">
                         <div class="desc"><span>Validity</span>
                             <p>60 Days</p>
@@ -303,7 +303,7 @@
                     </div>
                 </div>
                 <div class="btn-cont">
-                    <input type="hidden" name="package" value="Singapore Visa with LOI Type:E-Visa" required>
+                    <input type="hidden" name="package" value="India Visa with LOI Type:E-Visa" required>
                     <button class="btn btn-primary" type="submit">
                         Select Offer
                     </button>

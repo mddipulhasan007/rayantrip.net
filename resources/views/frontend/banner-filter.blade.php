@@ -25,7 +25,7 @@
                                                 </a>
                                           </li>
                                           <li class="cat-item {{ request()->routeIs('tours') ? 'active' : '' }}">
-                                                <a href="{{ route('tours') }}"
+                                                <a href="{{ route('index') }}"
                                                       class="item-link d-flex flex-column align-items-center justify-content-center gap-1">
                                                       <img class="img-fluid" src="./assets/images/holiday-mono.svg"
                                                             alt="icon">

@@ -242,6 +242,11 @@ $(document).ready(function () {
         $(".faq-row-main").removeClass("d-none");
     });
 
+    $(".showmore").click(function () {
+        $(".show-more").addClass("d-none");
+        $(".show-less").removeClass("d-none");
+    });
+
     $(window).on('load', function () {
         // $("#js-loader").fadeOut(); これだけでOK
 

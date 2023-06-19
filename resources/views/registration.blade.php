@@ -1,10 +1,8 @@
-@extends('main')
+@include('layout.frontend.header')
 
-@section('content')
-
-<div class="row justify-content-center">
-	<div class="col-md-4">
-		<div class="card">
+<div class="row justify-content-center mt-5">
+	<div class="col-md-4 mt-5">
+		<div class="card mt-5">
 		<div class="card-header">Registration</div>
 		<div class="card-body">
 			<form action="{{ route('auth.validate_registration') }}" method="POST">
@@ -31,8 +29,9 @@
 					<button type="submit" class="btn btn-dark btn-block">Register</button>
 				</div>
 			</form>
+			<h4 class="bottom-login"> Have an Account? <a href="{{ route('login') }}">Sign In</a> </h4>
 		</div>
 	</div>
 </div>
 
-@endsection('content')
+@include('layout.frontend.footer')

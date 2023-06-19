@@ -52,7 +52,7 @@ class UserAuthController extends Controller
 
         if(Auth::attempt($credentials))
         {
-            return redirect('dashboard');
+            return redirect('/');
         }
 
         return redirect('login')->with('success', 'Login details are not valid');
