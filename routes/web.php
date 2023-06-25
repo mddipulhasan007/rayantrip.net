@@ -65,6 +65,8 @@ Route::get('/visasuccess', [VisaController::class, 'visasuccess'])->name('visasu
 
 Route::get('/flight-search', [FormController::class, 'flightsearch'])->name('flightsearch');
 
+Route::get('/my-booking', [FormController::class, 'mybooking'])->name('mybooking');
+
 
 Route::controller(UserAuthController::class)->group(function(){
 
@@ -79,6 +81,8 @@ Route::controller(UserAuthController::class)->group(function(){
     Route::post('validate_login', 'validate_login')->name('auth.validate_login');
 
     Route::get('dashboard', 'dashboard')->name('dashboard');
+    Route::get('my-profile', 'myprofile')->name('myprofile');
+    // Route::get('my-booking', 'mybooking')->name('mybooking');
 
     Route::get('manageusers', 'users')->name('users');
 

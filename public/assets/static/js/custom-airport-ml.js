@@ -14,7 +14,7 @@ var optionsml = {
     }]
 };
 
-var fuseml = new Fuse(airports, optionsml)
+var fuseml = new Fuse(airportsml, optionsml)
 
 
 var acml = $('#from_city_mlt')

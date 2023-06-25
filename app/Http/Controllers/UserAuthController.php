@@ -71,6 +71,32 @@ class UserAuthController extends Controller
         return redirect('login')->with('success', 'you are not allowed to access');
     }
 
+    function myprofile()
+    {
+        if(Auth::check())
+        {
+            $user_id = Auth::user()->id;
+            $user_name = Auth::user()->name;
+            $user_email = Auth::user()->email;
+            $user_password = Auth::user()->password;
+            return view('frontend/profile', compact('user_id', 'user_name', 'user_email', 'user_password'));
+        }
+        return redirect('login')->with('success', 'you are not allowed to access');
+    }
+
+    // function mybooking()
+    // {
+    //     if(Auth::check())
+    //     {
+    //         $user_id = Auth::user()->id;
+    //         $user_name = Auth::user()->name;
+    //         $user_email = Auth::user()->email;
+    //         $user_password = Auth::user()->password;
+    //         return view('my-booking', compact('user_id', 'user_name', 'user_email', 'user_password'));
+    //     }
+    //     return redirect('login')->with('success', 'you are not allowed to access');
+    // }
+
     function editprofile()
     {
         // return view('editprofile');
@@ -93,9 +119,11 @@ class UserAuthController extends Controller
             'email'         =>  $request->email,
             'password'    =>  $request->password,
         ];
-        // return dd($userUpdate);
-        DB::table('users')->where('id',$request->idUpdate)->update($editprofile);
-        return redirect()->back()->with('editprofile','.');
+        User::where('id',auth()->id())->update($editprofile);
+        //return dd($editprofile);
+        //DB::table('users')->where('id',$request->idUpdate)->update($editprofile);
+        //return redirect()->back()->with('myprofile','.');
+        return redirect()->route('myprofile');
     }
 
     function users()

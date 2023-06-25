@@ -227,12 +227,14 @@
       <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.1/lodash.min.js'></script>
       <script src='https://unpkg.com/fuse.js@2.5.0/src/fuse.min.js'></script>
       <script src="{{ asset('assets/static/js/airports.js') }}"></script>
+      <script src="{{ asset('assets/static/js/hotels.js') }}"></script>
       <script src="{{ asset('assets/static/js/airportsto.js') }}"></script>
-      <!-- <script src="{{ asset('assets/static/js/airportsml.js') }}"></script> -->
+      <script src="{{ asset('assets/static/js/airportsml.js') }}"></script>
       <script src="{{ asset('assets/static/js/custom-airport-ml.js') }}"></script>
       <script src="{{ asset('assets/static/js/custom-airport-mlto.js') }}"></script>
       <script src="{{ asset('assets/static/js/custom-airport-to.js') }}"></script>
       <script src="{{ asset('assets/static/js/custom-airport.js') }}"></script>
+      <script src="{{ asset('assets/static/js/custom-hotel.js') }}"></script>
       <script src='https://code.jquery.com/ui/1.12.1/jquery-ui.js'></script>
       <script src='https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js'></script>
       <script src="{{ asset('assets/static/js/custom.js') }}"></script>

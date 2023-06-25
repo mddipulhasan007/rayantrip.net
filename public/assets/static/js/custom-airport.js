@@ -14,7 +14,7 @@ var options = {
     }]
 };
 
-var fuse = new Fuse(airports, options)
+var fusef = new Fuse(airports, options)
 
 
 var ac = $('#from_city')
@@ -71,7 +71,7 @@ function search(e) {
     }
 
     if (ac.val().length > 0) {
-        results = _.take(fuse.search(ac.val()), 7);
+        results = _.take(fusef.search(ac.val()), 7);
         numResults = results.length;
 
         var divs = results.map(function (r, i) {

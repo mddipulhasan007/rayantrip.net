@@ -135,6 +135,11 @@ $(function () {
         from = $("#from")
             .datepicker({
                 dateFormat: "dd MM yy",
+                numberOfMonths: 2,
+                defaultDate: "+1w",
+                minDate: '25 06',
+                //maxDate: '5/5/2020',
+                //showCurrentAtPos: 1,
             })
             .on("change", function () {
                 to.datepicker("option", "minDate", getDate(this));
@@ -142,16 +147,33 @@ $(function () {
         fromml = $("#fromml")
             .datepicker({
                 dateFormat: "dd MM yy",
+                numberOfMonths: 2,
+                defaultDate: "+1w",
+                minDate: '25 06',
+            })
+            .on("change", function () {
+                to.datepicker("option", "minDate", getDate(this));
+            }),
+        fromauto = $("#fromauto")
+            .datepicker({
+                dateFormat: "dd MM yy",
+                numberOfMonths: 2,
+                defaultDate: "+1w",
+                minDate: '27 06',
             })
             .on("change", function () {
                 to.datepicker("option", "minDate", getDate(this));
             }),
         to = $("#to").datepicker({
             dateFormat: "dd MM yy",
+            numberOfMonths: 2,
+            defaultDate: "+1w",
+            minDate: '27 06',
         })
             .on("change", function () {
                 from.datepicker("option", "maxDate", getDate(this));
                 fromml.datepicker("option", "maxDate", getDate(this));
+                fromauto.datepicker("option", "maxDate", getDate(this));
             });
 
     function getDate(element) {
@@ -171,6 +193,9 @@ $(function () {
 
     $("#showTo").click(function () {
         $("#fromml").datepicker("show");
+    });
+    $("#showTo").click(function () {
+        $("#fromauto").datepicker("show");
     });
 });
 
@@ -254,7 +279,7 @@ $(document).ready(function () {
         function loaderClose() {
             $("#js-loader").fadeOut();
         }
-        setTimeout(loaderClose, 3000);
+        setTimeout(loaderClose, 2000);
 
     });
 
@@ -265,9 +290,11 @@ $(document).ready(function () {
         function loaderClose() {
             $("#js-loader-hotel").fadeOut();
         }
-        setTimeout(loaderClose, 1000);
+        setTimeout(loaderClose, 2000);
 
     });
+
+
 
 
     // $("body").click(function () {
@@ -372,9 +399,9 @@ function addition() {
 var faqs_row = 0;
 function addfaqs() {
     html = '<ul class="one-round-sec" id="faqs-row' + faqs_row + '">';
-    html += '<li class="from-fly"><label for="from_city">Flying from</label><input class="form-control" id="from_city" type="text" value="Dhaka" name="from_city" /><input class="form-control" id="from_city_short_apt_name" type="text" value="DAC, Hazrat Shahjalal International Airport Bangladesh" name="from_city_short_apt_name" /></li>';
-    html += '<li class="to-fly"><i class="fa-solid fa-arrow-right-arrow-left exchange-icon"></i><label for="to_city">Flying to</label><input class="form-control" id="to_city" type="text" value="Coxs Bazar" name="to_city" /><input class="form-control" id="to_city_short_apt_name" type="text" value="CXB, Coxs Bazar" name="to_city_short_apt_name" /></li>';
-    html += '<li class="departure-fly departure-fly-multi"><label for="from">Depart on</label><input type="text" class="form-control" id="from" name="dept_date_from" value="11 Jun 2023, Saturday" placeholder="11 Jun 2023, Saturday" /></li>';
+    html += '<li class="from-fly"><label for="from_city_auto">Flying from</label><input class="form-control" id="from_city_auto" type="text" value="Dhaka" name="from_city_auto" /><input class="form-control" id="from_city_short_apt_name_auto" type="text" value="DAC, Hazrat Shahjalal International Airport Bangladesh" name="from_city_short_apt_name_auto" /></li>';
+    html += '<li class="to-fly"><i class="fa-solid fa-arrow-right-arrow-left exchange-icon"></i><label for="to_city_auto">Flying to</label><input class="form-control" id="to_city_auto" type="text" value="Coxs Bazar" name="to_city_auto" /><input class="form-control" id="to_city_short_apt_name_auto" type="text" value="CXB, Coxs Bazar" name="to_city_short_apt_name_auto" /></li>';
+    html += '<li class="departure-fly departure-fly-multi"><label for="fromauto">Depart on</label><input type="text" class="form-control" id="fromauto" name="dept_date_from_auto" value="28 Jun 2023, Saturday" placeholder="28 Jun 2023, Saturday" /></li>';
     html += '<li class="travel-class-fly hover-none"><a href="javascript:void(0)" class="btn btn-danger" onclick="$(\'#faqs-row' + faqs_row + '\').remove();"><i class="fa-regular fa-trash-can"></i> Delete</a></li>';
 
     html += '</ul>';
@@ -423,3 +450,25 @@ $(document).ready(function () {
         }
     });
 });
+
+$(document).ready(function () {
+    $('#from_city').on('focus', function () {
+        $(this).val('');
+    });
+    $('#to_city').on('focus', function () {
+        $(this).val('');
+    });
+    $('#from_city_hotel').on('focus', function () {
+        $(this).val('');
+    });
+    $('#countries').on('focus', function () {
+        $(this).val('');
+    });
+    $('#from_city_mlt').on('focus', function () {
+        $(this).val('');
+    });
+    $('#to_city_ml').on('focus', function () {
+        $(this).val('');
+    });
+});
+

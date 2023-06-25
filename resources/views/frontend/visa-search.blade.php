@@ -2,7 +2,7 @@
 
 <div class="container-fluid loader" id="js-loader-hotel">
       <div class="row">
-          <img loading="lazy" class="w-100 h-50" src="./assets/images/icons/giphy.gif" alt="...">
+          <img loading="lazy" class="w-100 h-50" src="./assets/images/new-images/visa.gif" alt="...">
       </div>
 </div>
 

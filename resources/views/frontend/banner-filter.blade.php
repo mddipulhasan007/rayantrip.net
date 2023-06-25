@@ -11,7 +11,7 @@
                                           <li class="cat-item {{ request()->routeIs('index') ? 'active' : '' }}">
                                                 <a href="{{ route('index') }}"
                                                       class="active item-link d-flex flex-column align-items-center justify-content-center gap-1">
-                                                      <img class="img-fluid" src="./assets/images/flight-mono.svg"
+                                                      <img class="img-fluid" src="./assets/images/new-images/flight.png"
                                                             alt="icon">
                                                       Flights
                                                 </a>
@@ -19,15 +19,15 @@
                                           <li class="cat-item {{ request()->routeIs('hotel') ? 'active' : '' }}">
                                                 <a href="{{ route('hotel') }}"
                                                       class="item-link d-flex flex-column align-items-center justify-content-center gap-1">
-                                                      <img class="img-fluid" src="./assets/images/hotel-mono.svg"
+                                                      <img class="img-fluid" src="./assets/images/new-images/hotel.png"
                                                             alt="icon">
                                                       Hotels
                                                 </a>
                                           </li>
-                                          <li class="cat-item {{ request()->routeIs('tours') ? 'active' : '' }}">
+                                          <li class="d-none d-md-block cat-item {{ request()->routeIs('tours') ? 'active' : '' }}">
                                                 <a href="{{ route('index') }}"
                                                       class="item-link d-flex flex-column align-items-center justify-content-center gap-1">
-                                                      <img class="img-fluid" src="./assets/images/holiday-mono.svg"
+                                                      <img class="img-fluid" src="./assets/images/new-images/tour.png"
                                                             alt="icon">
                                                       Tours
                                                 </a>
@@ -35,7 +35,7 @@
                                           <li class="cat-item {{ request()->routeIs('visa') ? 'active' : '' }}">
                                                 <a href="{{ route('visa') }}"
                                                       class="item-link d-flex flex-column align-items-center justify-content-center gap-1">
-                                                      <img class="img-fluid" src="./assets/images/visa-mono.svg"
+                                                      <img class="img-fluid" src="./assets/images/new-images/visa.png"
                                                             alt="icon">
                                                       Visa
                                                 </a>

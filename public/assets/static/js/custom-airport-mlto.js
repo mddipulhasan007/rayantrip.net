@@ -14,7 +14,7 @@ var optionsmlto = {
     }]
 };
 
-var fusemlto = new Fuse(airports, optionsmlto)
+var fusemlto = new Fuse(airportsto, optionsmlto)
 
 
 var acmlto = $('#to_city_ml')

@@ -1,10 +1,8 @@
-@extends('main')
+@include('layout.frontend.header')
 
-@section('content')
-
-<div class="row justify-content-center">
-	<div class="col-md-4">
-		<div class="card">
+<div class="row justify-content-center mt-5">
+	<div class="col-md-4 mt-5">
+		<div class="card mt-5">
 		<div class="card-header">Edit Profile</div>
 		<div class="card-body">
 			<form action="{{ route('auth.validate_editprofile') }}" method="POST">
@@ -22,7 +20,7 @@
 					@endif
 				</div>
 				<div class="form-group mb-3">
-					<input type="password" name="password" value="{{$user_password}}" class="form-control" placeholder="Password" />
+					<input type="password" name="password" value="" class="form-control" placeholder="Enter new password" />
 					@if($errors->has('password'))
 						<span class="text-danger">{{ $errors->first('password') }}</span>
 					@endif
@@ -35,4 +33,4 @@
 	</div>
 </div>
 
-@endsection('content')
+@include('layout.frontend.footer')

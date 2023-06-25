@@ -822,21 +822,32 @@ body {
 
     .filter-full-section {
         position: absolute;
-        top: 170px;
+        top: 195px;
         left: 0px;
         width: 100%;
         height: 500px;
 
+        @media (max-width:575px) {
+            top: 140px;
+        }
+
         .filter-area {
-            background: linear-gradient(180deg, hsla(0, 0%, 100%, .98), hsla(0, 0%, 100%, .92));
+            background-color: #fff;
+            // background: linear-gradient(180deg, hsla(0, 0%, 100%, .98), hsla(0, 0%, 100%, .92));
             box-shadow: 0 6px 10px rgba(0, 0, 0, .11);
             border-radius: 25px;
             min-height: 270px;
             position: relative;
             max-height: 460px;
 
+            @media (max-width:991px) {
+                height: 530px;
+                width: 92%;
+            }
+
             @media (max-width:575px) {
                 height: 530px;
+                width: 92%;
             }
 
             .filter-top-sec {
@@ -856,9 +867,16 @@ body {
                     width: 50%;
                     margin: auto;
 
-                    @media (max-width:575px) {
-                        width: 98%;
+
+                    @media (max-width:991px) {
+                        width: 90%;
                     }
+
+                    @media (max-width:575px) {
+                        width: 78%;
+                        height: 69px;
+                    }
+
 
                     ul {
                         &.main-category-menu-types {
@@ -890,6 +908,10 @@ body {
                                         img {
                                             height: 30px;
                                             filter: invert(73%) sepia(0%) saturate(3019%) hue-rotate(235deg) brightness(96%) contrast(90%);
+
+                                            @media (max-width:575px) {
+                                                height: 24px;
+                                            }
                                         }
                                     }
 
@@ -1002,6 +1024,12 @@ body {
                                 padding: 5px 10px;
                             }
 
+                            &.flight-trav-sm {
+                                @media (max-width:575px) {
+                                    width: 100% !important;
+                                }
+                            }
+
                             &:nth-child(2) {
                                 @media (max-width:575px) {
                                     border-right: 1px solid #ddd !important;
@@ -1032,8 +1060,8 @@ body {
                                 font-size: 21px;
                                 font-weight: 600;
 
-                                @media (max-width:380px) {
-                                    font-size: 17px;
+                                @media (max-width:575px) {
+                                    font-size: 16px;
                                 }
 
                                 .trav_count {
@@ -1054,13 +1082,18 @@ body {
                                 color: #333;
                                 cursor: pointer;
 
+                                @media (max-width:575px) {
+                                    font-size: 12px;
+                                    line-height: 15x;
+                                }
+
                                 @media (max-width:380px) {
-                                    font-size: 13px;
+                                    font-size: 12px;
                                     line-height: 15x;
                                 }
 
                                 @media (max-width:360px) {
-                                    font-size: 12px;
+                                    font-size: 11.5px;
                                     line-height: 14x;
                                 }
                             }
@@ -1077,13 +1110,38 @@ body {
                                     font-weight: 400;
                                     cursor: pointer;
 
+                                    &::placeholder {
+                                        /* Chrome, Firefox, Opera, Safari 10.1+ */
+                                        color: 333;
+                                        opacity: 0.4;
+                                        /* Firefox */
+                                    }
+
+                                    &:-ms-input-placeholder {
+                                        /* Internet Explorer 10-11 */
+                                        color: 333;
+                                        opacity: 0.4;
+                                    }
+
+                                    &::-ms-input-placeholder {
+                                        /* Microsoft Edge */
+                                        color: 333;
+                                        opacity: 0.4;
+                                    }
+
+                                    @media (max-width:575px) {
+                                        font-size: 13px;
+                                    }
+
                                     @media (max-width:380px) {
-                                        font-size: 14px;
+                                        font-size: 13px;
                                     }
 
                                     &.hasDatepicker {
                                         font-size: 18px !important;
                                         font-weight: 600 !important;
+                                        height: 63px !important;
+                                        padding-bottom: 36px;
 
                                         @media (max-width:380px) {
                                             font-size: 17px !important;
@@ -1097,7 +1155,7 @@ body {
 
                                     &.hasDatepicker {
                                         &:focus {
-                                            background-color: #fff;
+                                            background-color: transparent;
                                             cursor: initial;
                                             box-shadow: none;
                                             outline: none;
@@ -1111,11 +1169,11 @@ body {
                                         cursor: pointer;
 
                                         @media (max-width:575px) {
-                                            font-size: 20px;
+                                            font-size: 17px;
                                         }
 
                                         &:focus {
-                                            background-color: #fff;
+                                            background-color: transparent;
                                             cursor: initial;
                                             box-shadow: none;
                                             outline: none;
@@ -1132,7 +1190,7 @@ body {
 
 
                                     @media (max-width:575px) {
-                                        font-size: 20px;
+                                        font-size: 17px;
                                     }
 
                                     @media (max-width:380px) {
@@ -1146,7 +1204,7 @@ body {
                                     font-weight: 600;
 
                                     @media (max-width:575px) {
-                                        font-size: 20px;
+                                        font-size: 17px;
                                     }
                                 }
                             }
@@ -1154,9 +1212,24 @@ body {
                             &.from-fly {
                                 width: 25%;
                                 border-right: 0px;
+                                padding-left: 0px;
+                                padding-right: 0px;
+
+                                label {
+                                    padding-left: 23px;
+                                    padding-right: 23px;
+                                }
+
+                                input {
+                                    &.form-control {
+                                        padding-left: 23px;
+                                        padding-right: 23px;
+                                    }
+                                }
 
                                 .autocomplete-wrapper {
                                     position: relative;
+
                                 }
 
                                 .autocomplete-wrapper input {
@@ -1167,7 +1240,8 @@ body {
                                     position: absolute;
                                     background: white;
                                     z-index: 999;
-                                    top: 100%;
+                                    top: 238%;
+                                    width: 100%;
                                     left: 0;
                                     font-size: 13px;
                                     border: solid 1px #ddd;
@@ -1261,7 +1335,8 @@ body {
                                     position: absolute;
                                     background: white;
                                     z-index: 999;
-                                    top: 100%;
+                                    top: 238%;
+                                    width: 100%;
                                     left: 0;
                                     font-size: 13px;
                                     border: solid 1px #ddd;
@@ -1340,13 +1415,122 @@ body {
                                     border-bottom-color: #26C9FF;
                                     outline: solid 1px #00b6f2;
                                 }
+
+
+
+                                .autocomplete-wrapper-hotel {
+                                    position: relative;
+                                }
+
+                                .autocomplete-wrapper-hotel input {
+                                    width: 100%;
+                                }
+
+                                .autocomplete-results-hotel {
+                                    position: absolute;
+                                    background: white;
+                                    z-index: 999;
+                                    top: 238%;
+                                    width: 100%;
+                                    left: 0;
+                                    font-size: 13px;
+                                    border: solid 1px #ddd;
+                                    border-top-width: 0;
+                                    border-bottom-color: #ccc;
+                                    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+                                }
+
+                                .autocomplete-result-hotel {
+                                    padding: 12px 15px;
+                                    border-bottom: solid 1px #eee;
+                                    cursor: pointer;
+                                }
+
+                                .autocomplete-result-hotel:last-child {
+                                    border-bottom-width: 0;
+                                }
+
+                                .autocomplete-location-hotel {
+                                    opacity: 0.8;
+                                    font-size: smaller;
+                                }
+
+                                .autocomplete-results-hotel[data-highlight="0"]> :nth-child(1) {
+                                    color: white;
+                                    background: #26C9FF;
+                                    border-bottom-color: #26C9FF;
+                                    outline: solid 1px #00b6f2;
+                                }
+
+                                .autocomplete-results-hotel[data-highlight="1"]> :nth-child(2) {
+                                    color: white;
+                                    background: #26C9FF;
+                                    border-bottom-color: #26C9FF;
+                                    outline: solid 1px #00b6f2;
+                                }
+
+                                .autocomplete-results-hotel[data-highlight="2"]> :nth-child(3) {
+                                    color: white;
+                                    background: #26C9FF;
+                                    border-bottom-color: #26C9FF;
+                                    outline: solid 1px #00b6f2;
+                                }
+
+                                .autocomplete-results-hotel[data-highlight="3"]> :nth-child(4) {
+                                    color: white;
+                                    background: #26C9FF;
+                                    border-bottom-color: #26C9FF;
+                                    outline: solid 1px #00b6f2;
+                                }
+
+                                .autocomplete-results-hotel[data-highlight="4"]> :nth-child(5) {
+                                    color: white;
+                                    background: #26C9FF;
+                                    border-bottom-color: #26C9FF;
+                                    outline: solid 1px #00b6f2;
+                                }
+
+                                .autocomplete-results-hotel[data-highlight="5"]> :nth-child(6) {
+                                    color: white;
+                                    background: #26C9FF;
+                                    border-bottom-color: #26C9FF;
+                                    outline: solid 1px #00b6f2;
+                                }
+
+                                .autocomplete-results-hotel[data-highlight="6"]> :nth-child(7) {
+                                    color: white;
+                                    background: #26C9FF;
+                                    border-bottom-color: #26C9FF;
+                                    outline: solid 1px #00b6f2;
+                                }
+
+                                .autocomplete-results-hotel[data-highlight="7"]> :nth-child(8) {
+                                    color: white;
+                                    background: #26C9FF;
+                                    border-bottom-color: #26C9FF;
+                                    outline: solid 1px #00b6f2;
+                                }
                             }
 
                             &.to-fly {
                                 width: 25%;
                                 border-right: 0px;
                                 position: relative;
-                                padding-left: 30px;
+                                // padding-left: 30px;
+                                padding-left: 0px;
+                                padding-right: 0px;
+
+                                label {
+                                    padding-left: 30px;
+                                    padding-right: 23px;
+                                }
+
+                                input {
+                                    &.form-control {
+                                        padding-left: 30px;
+                                        padding-right: 23px;
+                                    }
+                                }
 
                                 i.exchange-icon {
                                     position: absolute;
@@ -1368,6 +1552,7 @@ body {
 
                                 .autocomplete-wrapper-to {
                                     position: relative;
+
                                 }
 
                                 .autocomplete-wrapper-to input {
@@ -1378,7 +1563,8 @@ body {
                                     position: absolute;
                                     background: white;
                                     z-index: 999;
-                                    top: 100%;
+                                    top: 238%;
+                                    width: 100%;
                                     left: 0;
                                     font-size: 13px;
                                     border: solid 1px #ddd;
@@ -1478,7 +1664,8 @@ body {
                                     position: absolute;
                                     background: white;
                                     z-index: 999;
-                                    top: 100%;
+                                    top: 238%;
+                                    width: 100%;
                                     left: 0;
                                     font-size: 13px;
                                     border: solid 1px #ddd;
@@ -1562,6 +1749,18 @@ body {
                             &.departure-fly {
                                 width: 15%;
                                 border-right: 0px;
+                                padding-left: 0px;
+
+                                label {
+                                    padding-left: 23px;
+                                }
+
+                                input {
+                                    &.form-control {
+                                        padding-left: 23px;
+                                    }
+                                }
+
 
                                 #to {
                                     font-size: 19px !important;
@@ -1581,6 +1780,23 @@ body {
                                 width: 15%;
                                 border-right: 0px;
                                 position: relative;
+                                padding-left: 0px;
+
+                                label {
+                                    padding-left: 23px;
+                                }
+
+                                .return-script-blank {
+                                    p {
+                                        padding-left: 23px !important;
+                                    }
+                                }
+
+                                input {
+                                    &.form-control {
+                                        padding-left: 23px;
+                                    }
+                                }
 
                                 #from {
                                     font-size: 19px;
@@ -1705,7 +1921,7 @@ body {
                                     flex-direction: column;
                                     // justify-content: center;
                                     top: 95px;
-                                    left: 0px;
+                                    right: 0px;
                                     background: #fff;
                                     border-radius: 20px;
 
@@ -1736,90 +1952,72 @@ body {
                                     }
 
                                     .travelllers-class-select-1 {
-                                        span {
-                                            &.pcount {
-                                                font-size: 16px;
-                                                font-weight: 600;
-                                                color: #333;
-                                                width: 67px;
-                                                text-align: right;
-                                                display: inline-block;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: space-between;
+                                        width: 85%;
+                                        border-bottom: 1px solid#ddd;
+                                        padding-bottom: 10px;
+                                        margin-bottom: 10px;
+
+                                        .title-sec {
+                                            flex-direction: column;
+                                            display: flex;
+
+                                            span {
+                                                &.pcount {
+                                                    font-size: 16px;
+                                                    font-weight: 600;
+                                                    color: #333;
+                                                }
+                                            }
+
+                                            small {
+                                                font-size: 12px;
+                                                font-weight: 400;
                                             }
                                         }
 
-                                        button {
-                                            font-size: 2rem;
-                                            padding: 0px 15px 7px 15px !important;
-                                            line-height: 30px;
-                                        }
+                                        .count-sec {
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: space-between;
 
-                                        input {
-                                            width: 50px;
-                                            color: #333;
-                                            border-radius: 4px;
+                                            button {
+                                                font-size: 2rem;
+                                                padding: 0px 15px 8px 15px !important;
+                                                line-height: 30px;
+                                                border-radius: 100%;
+                                                background-color: #fff !important;
+                                                color: #333 !important;
+                                                border: 1px solid #333;
+                                                height: 30px;
+                                                width: 30px;
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: center;
+
+                                                &:focus {
+                                                    box-shadow: none;
+                                                }
+                                            }
+
+                                            input {
+                                                width: 50px;
+                                                color: #333;
+                                                border-radius: 4px;
+                                                border: 0px !important;
+                                                text-align: center;
+                                                font-weight: 600;
+                                            }
                                         }
                                     }
 
                                     button {
                                         &.apply-btn {
-                                            margin-top: 20px;
-                                            margin-top: 20px;
+                                            margin-top: -3px;
                                             padding: 5px 30px;
                                             border-radius: 10px;
-                                        }
-                                    }
-
-                                    .travelllers-class-select-2 {
-                                        margin-top: 15px;
-
-                                        span {
-                                            &.pcount {
-                                                font-size: 16px;
-                                                font-weight: 600;
-                                                color: #333;
-                                                width: 67px;
-                                                text-align: right;
-                                                display: inline-block;
-                                            }
-                                        }
-
-                                        button {
-                                            font-size: 2rem;
-                                            padding: 0px 15px 7px 15px !important;
-                                            line-height: 30px;
-                                        }
-
-                                        input {
-                                            width: 50px;
-                                            color: #333;
-                                            border-radius: 4px;
-                                        }
-                                    }
-
-                                    .travelllers-class-select-3 {
-                                        margin-top: 15px;
-
-                                        span {
-                                            &.pcount {
-                                                font-size: 16px;
-                                                font-weight: 600;
-                                                color: #333;
-                                                width: 67px;
-                                                text-align: right;
-                                                display: inline-block;
-                                            }
-                                        }
-
-                                        button {
-                                            font-size: 2rem;
-                                            padding: 0px 15px 7px 15px !important;
-                                            line-height: 30px;
-                                        }
-
-                                        input {
-                                            width: 50px;
-                                            color: #333;
-                                            border-radius: 4px;
                                         }
                                     }
 
@@ -1968,27 +2166,47 @@ a {
     z-index: 9999 !important;
     overflow: hidden;
     min-width: 350px;
-    padding-top: 45px;
+    padding-top: 27px;
+    padding-bottom: 0px;
+
+    @media (max-width:575px) {
+        min-width: 250px;
+        max-width: 344px;
+        padding-left: 0px;
+    }
+
 
     &::after {
         position: absolute;
-        top: 13px;
-        left: 100px;
+        top: 3px;
+        left: 208px;
         content: "Select Your date";
         color: #333;
         font-size: 16px;
         font-weight: 600;
+
+        @media (max-width:575px) {
+            left: 100px;
+        }
     }
 
     .ui-datepicker-next {
         cursor: pointer;
         font-size: 22px;
+
+        @media (max-width:575px) {
+            height: 1.3em;
+        }
     }
 
     .ui-icon,
     .ui-datepicker-prev {
         cursor: pointer;
         font-size: 22px;
+
+        @media (max-width:575px) {
+            height: 1.3em;
+        }
     }
 
     .ui-datepicker-header {
@@ -2000,13 +2218,19 @@ a {
         border: 0px;
         background-color: transparent !important;
         color: #333 !important;
-        font-size: 16px;
-        line-height: 35px;
+        font-size: 15px;
+        line-height: 28px;
         border-radius: 10px;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 42px;
+        width: 34px;
+
+        @media (max-width:575px) {
+            font-size: 12px;
+            line-height: 16px;
+            width: 24px;
+        }
 
         &:hover {
             background-color: rgba(19, 128, 195, 0.50) !important;
@@ -2017,15 +2241,23 @@ a {
         border: 0px;
         background-color: #05315c !important;
         color: #fff !important;
-        font-size: 20px;
-        line-height: 35px;
+        font-size: 15px;
+        line-height: 28px;
         border-radius: 10px;
         display: flex;
         justify-content: center;
         align-items: center;
+
+        @media (max-width:575px) {
+            font-size: 12px;
+            line-height: 16px;
+        }
     }
 }
 
+.ui-datepicker th {
+    padding-bottom: 0px !important;
+}
 
 .loader {
     align-items: center;
@@ -2208,4 +2440,28 @@ select {
         }
     }
 
+}
+
+.user-profile-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px 10px 25px;
+
+    .user-profile {
+        border-radius: 100%;
+        width: 90px;
+        height: 90px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #1380C3;
+        background-color: rgb(19, 128, 195, 0.25);
+
+        i {
+            color: #1380C3;
+            font-size: 20px;
+        }
+    }
 }

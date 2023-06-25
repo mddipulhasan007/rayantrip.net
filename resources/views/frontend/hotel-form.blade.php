@@ -2,13 +2,13 @@
     @csrf
     <ul class="one-round-sec">
             <li class="from-fly" style="width:30%;">
-                <label for="from_city">Enter City of Property</label>
-                <input class="form-control" id="from_city"
-                        type="text" value="Cox's Bazar"
+                <label for="from_city_hotel">Enter City of Property</label>
+                <input class="form-control" id="from_city_hotel"
+                        type="text" value="Hotel Sea Queen" placeholder="Search Hotels"
                         name="hotel_name" required />
                 <input class="form-control"
-                        id="country_name" type="text"
-                        value="Bangladesh"
+                        id="hotel_city_name" type="text"
+                        value="Cox's Bazar"
                         name="country_name" required />
             </li>
             <li class="departure-fly" style="width:20%;">
@@ -49,62 +49,80 @@
                                     class="fa-solid fa-circle-xmark close-popup-btn"></i>
                         </div>
                         <div class="tvl-count travelllers-class-select-1">
-                            <span class="pcount">Adults</span>
-                            <button type='button'
-                                    class='btn btn-danger btn-sm '
-                                    id='mbA'
-                                    onmousedown='modIn(this)'
-                                    onmouseup='clearAll()'
-                                    onmouseleave='clearAll()'>-</button>
-                            <input type='number' id='A'
-                                    onchange='imposeMinMax(this)'
-                                    value='1' max='10' min='1'
-                                    step='1'>
-                            <button type='button'
-                                    class='btn btn-danger btn-sm '
-                                    id='pbA'
-                                    onmousedown='modIn(this)'
-                                    onmouseup='clearAll()'
-                                    onmouseleave='clearAll()'>+</button>
+                               <div class="title-sec">
+                                       <span class="pcount">Adults</span>
+                                        <small class="pcount">2-11 years</small>
+                                </div>
+                                <div class="count-sec">
+                            
+                                        <button type='button'
+                                                class='btn btn-danger btn-sm '
+                                                id='mbA'
+                                                onmousedown='modIn(this)'
+                                                onmouseup='clearAll()'
+                                                onmouseleave='clearAll()'>-</button>
+                                        <input type='number' id='A'
+                                                onchange='imposeMinMax(this)'
+                                                value='1' max='10' min='1'
+                                                step='1'>
+                                        <button type='button'
+                                                class='btn btn-danger btn-sm '
+                                                id='pbA'
+                                                onmousedown='modIn(this)'
+                                                onmouseup='clearAll()'
+                                                onmouseleave='clearAll()'>+</button>
+                                </div>
                         </div>
-                        <div class="tvl-count travelllers-class-select-2">
-                        <span class="pcount">Childs(0-10 yr)</span>
-                            <button type='button'
-                                    class='btn btn-danger btn-sm signBut'
-                                    id='mbB'
-                                    onmousedown='modIn(this)'
-                                    onmouseup='clearAll()'
-                                    onmouseleave='clearAll()'>-</button>
-                            <input type='number' id='B'
-                                    onchange='imposeMinMax(this)'
-                                    value='0' max='10' min='0'
-                                    step='1' style='width: 50px;'>
-                            <button type='button'
-                                    class='btn btn-danger btn-sm '
-                                    id='pbB'
-                                    onmousedown='modIn(this)'
-                                    onmouseup='clearAll()'
-                                    onmouseleave='clearAll()'>+
-                            </button>
+                        <div class="tvl-count travelllers-class-select-1">
+                        
+                                <div class="title-sec">
+                                        <span class="pcount">Childs</span>
+                                        <small class="pcount">2-11 years</small>
+                                </div>
+                                <div class="count-sec">
+                                        <button type='button'
+                                                class='btn btn-danger btn-sm signBut'
+                                                id='mbB'
+                                                onmousedown='modIn(this)'
+                                                onmouseup='clearAll()'
+                                                onmouseleave='clearAll()'>-</button>
+                                        <input type='number' id='B'
+                                                onchange='imposeMinMax(this)'
+                                                value='0' max='10' min='0'
+                                                step='1' style='width: 50px;'>
+                                        <button type='button'
+                                                class='btn btn-danger btn-sm '
+                                                id='pbB'
+                                                onmousedown='modIn(this)'
+                                                onmouseup='clearAll()'
+                                                onmouseleave='clearAll()'>+
+                                        </button>
+                                </div>
                         </div>
-                        <div class="tvl-count travelllers-class-select-3">
-                        <span class="pcount">Childs(0-5 yr)</span>
-                            <button type='button'
-                                    class='btn btn-danger btn-sm signBut'
-                                    id='mbC'
-                                    onmousedown='modIn(this)'
-                                    onmouseup='clearAll()'
-                                    onmouseleave='clearAll()'>-</button>
-                            <input type='number' id='C'
-                                    onchange='imposeMinMax(this)'
-                                    value='0' max='10' min='0'
-                                    step='1' style='width: 50px;'>
-                            <button type='button'
-                                    class='btn btn-danger btn-sm '
-                                    id='pbC'
-                                    onmousedown='modIn(this)'
-                                    onmouseup='clearAll()'
-                                    onmouseleave='clearAll()'>+</button>
+                        <div class="tvl-count travelllers-class-select-1">
+                        
+                                <div class="title-sec">
+                                        <span class="pcount">Childs</span>
+                                        <small class="pcount">2-11 years</small>
+                                </div>
+                                <div class="count-sec">
+                                        <button type='button'
+                                                class='btn btn-danger btn-sm signBut'
+                                                id='mbC'
+                                                onmousedown='modIn(this)'
+                                                onmouseup='clearAll()'
+                                                onmouseleave='clearAll()'>-</button>
+                                        <input type='number' id='C'
+                                                onchange='imposeMinMax(this)'
+                                                value='0' max='10' min='0'
+                                                step='1' style='width: 50px;'>
+                                        <button type='button'
+                                                class='btn btn-danger btn-sm '
+                                                id='pbC'
+                                                onmousedown='modIn(this)'
+                                                onmouseup='clearAll()'
+                                                onmouseleave='clearAll()'>+</button>
+                                </div>
                         </div>
                         <button class="btn btn-primary apply-btn" type="button" value="ADD"
                             onclick="addition()">Apply</button>

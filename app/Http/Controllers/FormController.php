@@ -73,8 +73,8 @@ class FormController extends Controller
             'to_city' => 'required',
             'to_city_short_apt_name' => 'required',
             'dept_date_from' => 'required',
-            'trav_count' => 'required',
             'return_date_to' => '',
+            'trav_count' => 'required',
             'fare_type' => 'required',
         ]);
 
@@ -134,6 +134,8 @@ class FormController extends Controller
             'total_price' => 'required',
         ]);
 
+        $data['user_id'] = auth()->id();
+
         // Save the form data to the database
         FormData::create(array_merge(
             $request->session()->get('index'),
@@ -146,6 +148,24 @@ class FormController extends Controller
         $request->session()->forget('step2');
 
         return redirect()->route('success');
+    }
+
+    function mybooking()
+    {
+
+        if(Auth::check())
+        {
+           
+            //return view('my-booking', compact('user_name'));
+
+           $user = User::with('bookings')->where('id',auth()->id())->first();
+            return view('my-booking', [
+                'user' => $user,
+                'user_name' => Auth::user()->name,
+
+          ]);
+        }
+        
     }
 
     public function success(){
